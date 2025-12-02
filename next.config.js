@@ -4,7 +4,8 @@ const nextConfig = {
   async rewrites() {
     return [
       { source: "/", destination: "/index.html" },
-      { source: "/mobile", destination: "/mobile.html" }
+      { source: "/mobile", destination: "/mobile.html" },
+      { source: "/non-alcoholic", destination: "/non-alcoholic.html" }
     ];
   }
 };
