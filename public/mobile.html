@@ -19,6 +19,22 @@
             overflow-x: hidden;
         }
 
+        .logo-bar {
+            width: 100%;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: center;
+            background: #f5f5f5;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+
+        .logo-bar img {
+            max-height: 56px;
+            width: auto;
+        }
+
         /* --- Hero Section --- */
         .hero {
             height: 100vh;
@@ -362,6 +378,18 @@
         }
         .cabinet-icon { font-size: 3rem; margin-bottom: 15px; }
 
+        .footer-logo {
+            padding: 32px 20px 48px;
+            display: flex;
+            justify-content: center;
+            background: #0f2f1e;
+        }
+
+        .footer-logo img {
+            max-height: 56px;
+            width: auto;
+        }
+
         /* --- MOBILE OPTIMIZATION (THE FIX) --- */
         @media (max-width: 768px) {
             
@@ -438,6 +466,9 @@
     </style>
 </head>
 <body>
+    <div class="logo-bar">
+        <img src="/logo.png" alt="Top logo">
+    </div>
     <div class="hero">
         <h1>The Last Stop</h1>
         <p class="subtitle">The liquor store is the final errand. They're tired, they're done, and they really need your help.</p>
@@ -792,6 +823,9 @@
             });
         }
     </script>
+    <footer class="footer-logo">
+        <img src="/logo_footer.png" alt="Footer logo">
+    </footer>
     <script type="module">
       import { track } from "https://cdn.skypack.dev/@vercel/analytics";
 
