@@ -22,7 +22,15 @@
     const reveal = clamp((progress - 0.15) / 0.45);
     const values = {
       '--progress': progress,
-      '--guest-x': `${(1 - clamp(progress / 0.35)) * 75}px`,
+      '--guest-x': `${(1 - clamp(progress / 0.35)) * 180}px`,
+      '--guest-y': `${Math.sin(clamp(progress / 0.35) * Math.PI * 4) * (1 - clamp(progress / 0.35)) * 7}px`,
+      '--guest-scale': 0.93 + clamp(progress / 0.35) * 0.07,
+      '--errand-one': clamp((progress - 0.18) / 0.09),
+      '--errand-two': clamp((progress - 0.24) / 0.09),
+      '--errand-three': clamp((progress - 0.30) / 0.09),
+      '--errand-four': clamp((progress - 0.36) / 0.09),
+      '--errand-five': clamp((progress - 0.46) / 0.1),
+      '--errand-six': clamp((progress - 0.58) / 0.1),
       '--guest-angle': `${-4 + progress * 6}deg`,
       '--title-y': `${-progress * 45}px`,
       '--title-opacity': 1 - progress * 0.82,

@@ -29,3 +29,11 @@ The visible motion toggle and OS reduced-motion preference provide a static read
 The previous opening was visually checked on desktop and at 390px, including choices, keyboard selection, session restoration and motion-off mode. Browser policy blocked interaction QA for the new continuation, so its visual/interaction acceptance remains pending. Source checks cover anchors, duplicate IDs, asset existence and JavaScript syntax; the production build is checked before publishing.
 
 The pre-existing third-party analytics module reported a missing track export in earlier browser testing; this is outside the story implementation.
+
+## Second choreography pass
+
+The arrival now settles into place with a slight carrying bob and staggered list entries. Bottle cutouts rise and rotate into their cards as the shelf comes into view. A new pinned hosting scene fills two paper glasses, brings them together and reveals a celebration note. The gift bag receives a bow and swinging paper tag. The closing scene is now pinned: a doorway opens, the guest moves toward it, and a paper checklist crosses off the three remaining tasks.
+
+All movement is driven by scroll and reverses when scrolling back. CSS transforms apply only while motion is enabled. New decorative props are hidden from assistive technology; controls and lesson text remain native HTML. The character still uses composite poses rather than separately articulated limbs. No new product or completion-tracking work is included.
+
+Validation for this pass: production build, JavaScript syntax, whitespace and both entry-point structure checks passed. Browser interaction and visual QA remain pending because the earlier browser policy restriction has not been bypassed.

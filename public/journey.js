@@ -16,6 +16,11 @@
       const opening = clamp((p - 0.15) / 0.45);
       const values = {
         '--scene-progress': p,
+        '--toast-close': clamp((p - 0.15) / 0.45),
+        '--toast-fill': clamp((p - 0.05) / 0.3),
+        '--toast-cheers': clamp((p - 0.64) / 0.15),
+        '--toast-settle': clamp((p - 0.82) / 0.18),
+        '--gift-tag': clamp((p - 0.73) / 0.16),
         '--table-x': `${(1 - clamp(p / 0.35)) * 70}px`,
         '--table-angle': `${-3 + p * 3}deg`,
         '--ticket-one': clamp(p / 0.22),
