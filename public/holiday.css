@@ -1,0 +1,108 @@
+/* Shared editorial treatment for the desktop and mobile holiday guides. */
+:root { --blue:#1646cf; --ink:#172f28; --paper:#f4f0e6; --pink:#ffb4ce; --orange:#ed5428; }
+html { scroll-behavior:smooth; scroll-padding-top:110px; }
+body { background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; }
+a { color:inherit; }
+a:focus-visible, summary:focus-visible { outline:3px solid var(--orange); outline-offset:6px; }
+.skip-link { position:fixed; top:-80px; left:20px; z-index:100; background:var(--paper); padding:14px; }
+.skip-link:focus { top:12px; }
+.logo-bar { height:88px; padding:18px 4%; justify-content:space-between; background:var(--paper); box-shadow:none; border-bottom:1px solid #172f2826; }
+.logo-bar img { max-height:48px; max-width:190px; object-fit:contain; }
+.header-note, .hero-kicker, .hero-edition, .chapter-number { font:11px/1.5 'Courier New', monospace; letter-spacing:1.6px; }
+.guide-index { position:relative; }
+.guide-index summary { list-style:none; cursor:pointer; background:var(--pink); padding:12px 21px; border-radius:40px; font-size:14px; }
+.guide-index summary::-webkit-details-marker { display:none; }
+.guide-index summary span { margin-left:18px; }
+.guide-index nav { position:absolute; right:0; top:56px; width:min(440px, 90vw); max-height:70vh; overflow-y:auto; background:var(--paper); padding:16px 24px; border:1px solid var(--ink); border-radius:14px; box-shadow:0 16px 40px #10221f26; }
+.guide-index nav a { display:flex; gap:18px; padding:13px 0; text-decoration:none; border-bottom:1px solid #172f2826; font-size:14px; line-height:1.4; }
+.guide-index nav a:hover { color:var(--blue); }
+.guide-index nav a span { font:11px/1.8 monospace; opacity:.65; }
+.hero { min-height:790px; height:calc(100svh - 88px); max-height:1100px; display:block; background:var(--blue); color:var(--paper); padding:38px 6% 28px; isolation:isolate; }
+.hero::before { content:none; }
+.hero-kicker { text-align:center; margin:0 0 12px; }
+.hero h1 { font-size:clamp(90px, 12vw, 190px); line-height:.95; font-weight:800; letter-spacing:-.075em; margin:0; text-align:center; position:relative; z-index:2; }
+.hero h1 em { font-family:Georgia,serif; font-weight:400; letter-spacing:-.08em; }
+.title-dot { color:var(--orange); }
+.hero-scene { position:relative; height:350px; width:min(700px, 100%); margin:8px auto 0; }
+.gift-bag { position:absolute; left:19%; top:106px; width:185px; height:222px; background:var(--pink); transform:rotate(-9deg); box-shadow:inset -20px 0 #df8da9, 12px 18px 20px #061d702b; display:grid; place-items:center; }
+.gift-bag::before { content:''; position:absolute; width:70px; height:64px; border:7px solid var(--pink); border-bottom:0; border-radius:40px 40px 0 0; top:-60px; left:50px; }
+.gift-bag span { font-size:48px; font-weight:800; line-height:.9; letter-spacing:-3px; color:var(--blue); transform:rotate(3deg); }
+.hero-bottle { position:absolute; left:54%; top:90px; width:112px; height:244px; border-radius:35px 35px 12px 12px; background:linear-gradient(90deg,#143d2e,#36704d 32%,#1b4b36 65%,#0c3025); transform:rotate(13deg); box-shadow:12px 18px 20px #061d7040; }
+.hero-bottle::before { content:''; position:absolute; left:37px; top:-76px; width:38px; height:90px; border-radius:5px 5px 0 0; background:linear-gradient(#eb6a3d 0 35%,#234b37 35%); }
+.hero-bottle-label { position:absolute; top:80px; left:8px; right:8px; background:var(--paper); padding:17px 4px; color:var(--ink); font:bold 20px/.95 Arial,sans-serif; text-align:center; }
+.hero-bottle-label em { font:italic 24px/1 Georgia,serif; }
+.scene-star { position:absolute; top:45px; left:9%; color:var(--pink); font:90px/1 Georgia,serif; transform:rotate(-12deg); }
+.scene-note { position:absolute; right:1%; top:180px; transform:rotate(8deg); font:italic 25px/1.2 Georgia,serif; color:var(--pink); }
+.hero-bottom { display:flex; justify-content:space-between; align-items:flex-end; gap:30px; position:relative; z-index:3; margin:14px auto 28px; max-width:1100px; }
+.hero .subtitle { font:15px/1.65 'Courier New',monospace; text-align:left; max-width:500px; padding:0; margin:0; opacity:1; }
+.start-link { font-size:14px; text-decoration:none; border-bottom:1px solid #f4f0e677; padding:12px 0; }
+.start-link span { font-size:28px; margin-left:20px; }
+.hero-edition { display:block; text-align:center; opacity:.75; font-size:9px; }
+.section, .sticky-section { background:var(--paper); min-height:0; height:auto; padding:100px 7%; border-bottom:1px solid #172f2826; }
+.section:nth-child(even) { background:var(--paper); }
+.section:nth-child(odd) { background:#e8eddf; }
+.content { width:100%; max-width:1000px; background:transparent; border-radius:0; box-shadow:none; padding:0; margin:0 auto; }
+.chapter-number { display:block; margin-bottom:26px; color:var(--blue); }
+h2 { color:var(--ink); font:500 clamp(38px,5.5vw,76px)/1.03 Georgia,serif; letter-spacing:-2px; max-width:900px; margin-bottom:36px; text-wrap:balance; }
+h3 { font-size:25px; letter-spacing:-.6px; }
+p { font-size:18px; line-height:1.75; }
+.content > p { max-width:780px; }
+.emphasis { color:var(--ink); font-size:24px; font-weight:500; }
+.highlight { background-image:linear-gradient(var(--pink),var(--pink)); }
+.fade-in, .stat-box, .package-line { opacity:1; transform:none; }
+.stat-box { background:var(--blue); color:var(--paper); border-radius:0; padding:40px; }
+.stat-number { font:italic 78px/1 Georgia,serif; }
+.gift-card, .wine-category { background:transparent; border:1px solid #172f2855; border-radius:0; box-shadow:none; }
+.gift-card { text-align:left; padding:28px; }
+.gift-card:nth-child(2) { background:var(--pink); }
+.gift-title { font-size:23px; font-weight:500; letter-spacing:-.5px; }
+.gift-icon, .wine-emoji { font-size:30px; }
+.wine-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.wine-category:hover { transform:translateY(-3px); box-shadow:none; background:var(--pink); }
+.conversation { background:#fffaf0; border:1px solid #172f2833; border-radius:0; padding:30px; }
+.customer { color:var(--blue); }
+.you { color:var(--ink); }
+.tip-card { background:#f7d6df; border:0; border-radius:0; padding:32px; }
+.tip-card h4 { color:var(--ink); font-size:18px; }
+.sticky-content { position:static; height:auto; }
+.package-line { display:block; }
+.bottle-comparison { padding:30px 0; }
+.cabinet-visual { border:0; border-radius:0; background:var(--blue); }
+.section[style] { background:var(--blue) !important; color:var(--paper) !important; }
+.section[style] .chapter-number { color:var(--pink); }
+.footer-logo { background:var(--paper); padding:45px; }
+.footer-logo img { max-width:240px; object-fit:contain; }
+@media (min-width:1500px) { .hero-scene { height:390px; margin-top:35px; } }
+@media (max-width:768px) {
+    .header-note { display:none; }
+    .logo-bar { height:76px; padding:14px 5%; }
+    .logo-bar img { max-width:150px; max-height:44px; }
+    .hero { min-height:780px; height:auto; max-height:none; padding:35px 6% 24px; }
+    .hero h1 { font-size:clamp(78px,18vw,138px); }
+    .hero h1 > span:first-child { display:block; }
+    .hero-kicker { font-size:9px; margin-bottom:24px; }
+    .hero-scene { height:310px; width:340px; max-width:100%; margin:20px auto 0; }
+    .gift-bag { left:13%; top:100px; width:140px; height:175px; }
+    .gift-bag::before { left:38px; width:56px; height:50px; top:-48px; border-width:5px; }
+    .gift-bag span { font-size:38px; }
+    .hero-bottle { left:61%; top:88px; width:84px; height:190px; }
+    .hero-bottle::before { left:28px; width:29px; height:65px; top:-60px; }
+    .hero-bottle-label { top:65px; padding:12px 0; font-size:15px; }
+    .hero-bottle-label em { font-size:20px; }
+    .scene-star { font-size:64px; left:1%; top:30px; }
+    .scene-note { display:none; }
+    .hero-bottom { display:block; margin:0 0 28px; }
+    .hero .subtitle { font-size:13px; }
+    .start-link { display:inline-block; margin-top:15px; font-size:13px; }
+    .section, .sticky-section { padding:65px 6%; }
+    h2 { letter-spacing:-1.4px; }
+    p { font-size:17px; }
+    .gift-types { grid-template-columns:1fr; }
+    .wine-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .bottle-comparison { flex-direction:row; gap:20px; }
+    .bottle-shapes { padding:20px 10px; }
+    .tip-card, .conversation { padding:24px; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *, *::before, *::after { animation:none !important; transition:none !important; } }
+/* Draw the arrow so it does not depend on a platform's symbol font. */
+.start-link span { display:inline-block; width:12px; height:12px; font-size:0; border-right:1px solid currentColor; border-bottom:1px solid currentColor; transform:rotate(0deg); }

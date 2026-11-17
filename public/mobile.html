@@ -146,7 +146,7 @@
             margin: 2rem 0;
             text-align: center;
             transform: scale(0.9);
-            opacity: 0; 
+            opacity: 0;
             transition: all 0.6s ease;
         }
 
@@ -178,7 +178,7 @@
             border: 2px solid #2d5a3d;
             transition: transform 0.3s ease;
         }
-        
+
         @media (hover: hover) {
             .gift-card:hover { transform: translateY(-5px); }
         }
@@ -395,7 +395,7 @@
 
         /* --- MOBILE OPTIMIZATION (THE FIX) --- */
         @media (max-width: 768px) {
-            
+
             /* FORCE VISIBILITY: Disable animations on mobile to prevent hidden text */
             .fade-in, .stat-box {
                 opacity: 1 !important;
@@ -405,14 +405,14 @@
             h1 { font-size: 2.8rem; }
             h2 { font-size: 2rem; margin-bottom: 1.5rem; }
             .subtitle { font-size: 1.2rem; margin-bottom: 2rem;}
-            
-            .section { 
-                padding: 40px 15px; 
+
+            .section {
+                padding: 40px 15px;
                 min-height: auto;
             }
-            
-            .content { 
-                padding: 25px; 
+
+            .content {
+                padding: 25px;
                 border-radius: 4px;
             }
 
@@ -424,26 +424,26 @@
 
             /* Sticky Section Mobile Fix */
             .sticky-section { height: auto; margin: 40px 0; }
-            .sticky-content { 
-                position: static; 
-                height: auto; 
-                display: block; 
+            .sticky-content {
+                position: static;
+                height: auto;
+                display: block;
                 padding: 40px 20px;
                 background: white;
                 border-radius: 8px;
             }
-            
+
             /* Force package lines to be visible */
-            .package-line { 
-                opacity: 1 !important; 
+            .package-line {
+                opacity: 1 !important;
                 transform: translateY(0) !important;
                 margin-bottom: 20px;
             }
-            
+
             #package-text-container { margin-bottom: 40px; }
 
             .bottle-comparison {
-                flex-direction: row; 
+                flex-direction: row;
                 gap: 20px;
                 align-items: flex-end;
                 justify-content: center;
@@ -452,13 +452,13 @@
             .bottle-graphic { transform: scale(0.8); margin-bottom: 0; }
             .bottle-option { width: 45%; }
             .bottle-desc { font-size: 0.8rem; }
-            
+
             .bottle-shapes {
                 padding: 20px;
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .shape-demo { margin-bottom: 30px; }
             .shape-demo:last-child { margin-bottom: 0; }
 
@@ -467,22 +467,42 @@
             .cabinet-visual { margin: 1rem -10px; border-radius: 4px; }
         }
     </style>
+    <meta name="description" content="The Last Stop — Cascadia’s field guide to helping holiday guests find the right gift and get home happy.">
+    <link rel="stylesheet" href="/holiday.css">
+    <script src="/holiday.js" defer></script>
 </head>
 <body>
-    <div class="logo-bar">
-        <img src="/logo.png?v=3" alt="Top logo" loading="eager" onerror="this.onerror=null; this.src='/mobile/logo.png?v=3';">
-    </div>
-    <div class="hero">
-        <h1>The Last Stop</h1>
-        <p class="subtitle">The liquor store is the final errand. They're tired, they're done, and they really need your help.</p>
-        <div class="scroll-indicator">↓</div>
-    </div>
+    <a class="skip-link" href="#read">Skip to the guide</a>
+    <header class="logo-bar">
+        <a href="#top" aria-label="Cascadia — back to top"><img src="/logo.png?v=3" alt="Cascadia Liquor"></a>
+        <span class="header-note">A FIELD GUIDE FOR DECEMBER</span>
+        <details class="guide-index">
+            <summary>Index <span aria-hidden="true">☰</span></summary>
+            <nav aria-label="Guide chapters"><a href="#read"><span>01</span>Understanding the December Shopper</a><a href="#chapter-2"><span>02</span>The Three Types of Gift Buyers</a><a href="#chapter-3"><span>03</span>The Package Tells the Story</a><a href="#chapter-4"><span>04</span>Trust the Package</a><a href="#chapter-5"><span>05</span>You Know More Than You Think</a><a href="#chapter-6"><span>06</span>Always Ask the Budget</a><a href="#chapter-7"><span>07</span>The Simple Rules That Work</a><a href="#chapter-8"><span>08</span>The Checkout Save</a><a href="#chapter-9"><span>09</span>Don't Fear the Locked Cabinet</a><a href="#chapter-10"><span>10</span>Low and No ABV 🥤</a><a href="#chapter-11"><span>11</span>You're Not Selling-You're Rescuing</a></nav>
+        </details>
+    </header>
+    <main id="top">
+    <section class="hero" aria-labelledby="guide-title">
+        <p class="hero-kicker">GOOD GIFTS. LESS GUESSWORK.</p>
+        <h1 id="guide-title"><span>The Last</span> <em>Stop<span class="title-dot">.</span></em></h1>
+        <div class="hero-scene" aria-hidden="true">
+            <div class="gift-bag"><span>OH,<br>GOOD.</span></div>
+            <div class="hero-bottle"><div class="hero-bottle-label">THE<br>GOOD<br><em>stuff.</em></div></div>
+            <span class="scene-star">✳</span>
+            <span class="scene-note">a little help.<br>a great gift.</span>
+        </div>
+        <div class="hero-bottom">
+            <p class="subtitle">The liquor store is the final errand.<br>They're tired, they're done, and they really need your help.</p>
+            <a class="start-link" href="#read">Make their last stop a good one <span aria-hidden="true">↘</span></a>
+        </div>
+        <span class="hero-edition">CASCADIA LIQUOR / THE HOLIDAY EDITION</span>
+    </section>
 
     <div class="section">
         <div class="content fade-in">
-            <h2>Understanding the December Shopper</h2>
+            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 01</span><h2 id="read" tabindex="-1">Understanding the December Shopper</h2>
             <p>Picture your guest: shopping bags in both hands, checking their phone, mentally tallying their remaining tasks. The liquor store wasn't first on the list—it was <span class="highlight">last</span>.</p>
-            
+
             <p>They've already navigated the mall parking lot, fought the crowds at Quality Foods, wrapped gifts are in their car. Now they need wine for the office party, a bottle for their host, something for the unexpected plus-one at Christmas dinner.</p>
 
             <div class="stat-box">
@@ -496,7 +516,7 @@
 
     <div class="section">
         <div class="content fade-in">
-            <h2>The Three Types of Gift Buyers</h2>
+            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 02</span><h2 id="chapter-2" tabindex="-1">The Three Types of Gift Buyers</h2>
             <p>Every December shopper is buying gifts for people in one of three categories:</p>
 
             <div class="gift-types">
@@ -529,7 +549,7 @@
     <div class="sticky-section">
         <div class="sticky-content">
             <div class="content" style="max-height: 100vh; overflow-y: auto;">
-                <h2>The Package Tells the Story</h2>
+                <span class="chapter-number" aria-hidden="true">FIELD NOTE / 03</span><h2 id="chapter-3" tabindex="-1">The Package Tells the Story</h2>
                 <div id="package-text-container">
                     <p class="package-line" id="line1">Sometimes the pretty bottle that costs just a few dollars more is a significant upgrade...</p>
                     <p class="package-line" id="line2">Producers put better products in better packages. That embossed label, the heavier glass—it's not an accident.</p>
@@ -567,7 +587,7 @@
 
     <div class="section">
         <div class="content fade-in">
-            <h2>Trust the Package</h2>
+            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 04</span><h2 id="chapter-4" tabindex="-1">Trust the Package</h2>
             <p>Here's something they don't teach in WSET: <span class="highlight">producers put better products in better packages</span>.</p>
 
             <p>That embossed label? The heavier glass? The elegant box? Those aren't accidents. When a winery invests in premium packaging, they're protecting a premium product.</p>
@@ -585,7 +605,7 @@
 
     <div class="section">
         <div class="content fade-in">
-            <h2>You Know More Than You Think</h2>
+            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 05</span><h2 id="chapter-5" tabindex="-1">You Know More Than You Think</h2>
             <p>Real talk: <span class="highlight">You know more than 80-90% of people walking through that door.</span></p>
 
             <p>You don't need to be a sommelier. You don't need to know every vineyard in Burgundy. You need to know your arsenal—a solid lineup at different price points.</p>
@@ -634,10 +654,10 @@
             </div>
         </div>
     </div>
-    
+
         <div class="section">
         <div class="content fade-in">
-            <h2>Always Ask the Budget</h2>
+            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 06</span><h2 id="chapter-6" tabindex="-1">Always Ask the Budget</h2>
             <p>This is the most important question you'll ask all December:</p>
 
             <p class="emphasis">"How much are you looking to spend?"</p>
@@ -665,7 +685,7 @@
 
     <div class="section">
         <div class="content fade-in">
-            <h2>The Simple Rules That Work</h2>
+            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 07</span><h2 id="chapter-7" tabindex="-1">The Simple Rules That Work</h2>
             <p>December is too busy for complexity. You need shortcuts that work <em>most of the time</em>. Here's the big one:</p>
 
             <div class="stat-box">
@@ -698,7 +718,7 @@
 
     <div class="section">
         <div class="content fade-in">
-            <h2>The Checkout Save</h2>
+            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 08</span><h2 id="chapter-8" tabindex="-1">The Checkout Save</h2>
             <p>They're at the register. Transaction complete. This is where you earn bonus points:</p>
 
             <div class="conversation">
@@ -722,7 +742,7 @@
 
     <div class="section">
         <div class="content fade-in">
-            <h2>Don't Fear the Locked Cabinet</h2>
+            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 09</span><h2 id="chapter-9" tabindex="-1">Don't Fear the Locked Cabinet</h2>
 
             <div class="cabinet-visual">
                 <div class="cabinet-icon">🔐</div>
@@ -754,10 +774,10 @@
 
     <div class="section">
         <div class="content fade-in">
-            <h2>Low and No ABV 🥤</h2>
+            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 10</span><h2 id="chapter-10" tabindex="-1">Low and No ABV 🥤</h2>
             <p style="font-style: italic; color: #666; margin-bottom: 2rem;">Not just pop anymore.</p>
 
-            <p>This aisle used to be juice and Coke. Now it's $30 alcohol-free spirits, craft sodas in fancy bottles, and mocktail mixers. Your customers know this. Do you?</p>
+            <p>This aisle used to be juice and Coke. Now it's $30 alcohol-free spirits, craft sodas in fancy bottles, and mocktail mixers. Your guests know this. Do you?</p>
 
             <h3>Three Types of Shoppers</h3>
             <p><strong>The DD:</strong> "I'm driving—what can I bring that's not just pop?"<br>
@@ -778,18 +798,18 @@
 
             <h3>What's What</h3>
             <p><strong>Alcohol-Free Sparkling:</strong> Mionetto, Glimmer. Yes, people buy them. They taste shockingly good.</p>
-            
+
             <p><strong>Premium Mixers:</strong> Fever-Tree, Walter's Caesar Mix. Not just for cocktails. Add citrus, or olives, instant mocktail.</p>
-            
+
             <p><strong>Craft Sodas:</strong> Phillips. Spinnaker's. Interesting flavors. Gift-friendly. Party-ready.</p>
 
             <h3>The Gift Play</h3>
-            <p>Customer buying 2-3 premium bottles?</p>
-            
+            <p>Guest buying 2-3 premium bottles?</p>
+
             <div class="conversation">
                 <div class="dialogue"><span class="you">You:</span> "Is this for you or are you putting together a gift?"</div>
             </div>
-            
+
             <p>Suggest glassware, napkins, mocktail recipe card. Boom—gift basket. $15 becomes $60.</p>
 
             <div class="tip-card">
@@ -799,7 +819,7 @@
 
             <h3>The One Question</h3>
             <p class="emphasis">"What's the occasion?"</p>
-            
+
             <p>That's it. Now you know what they need—and what else they might want.</p>
         </div>
     </div>
@@ -807,80 +827,24 @@
 
     <div class="section" style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%); color: white;">
         <div class="content" style="background: transparent; box-shadow: none; color: white;">
-            <h2 style="color: white;">You're Not Selling-You're Rescuing</h2>
-            
+            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 11</span><h2 style="color: white;" id="chapter-11" tabindex="-1">You're Not Selling-You're Rescuing</h2>
+
             <p style="font-size: 1.4rem; line-height: 2; margin-bottom: 2rem;">Your guest arrived at your store last for a reason. Not because you're unimportant—because they're exhausted.</p>
-            
+
             <p style="font-size: 1.4rem; line-height: 2; margin-bottom: 2rem;">They've battled crowds, circled parking lots, checked off lists. They're carrying bags, mentally calculating what they've forgotten, dreading the next errand.</p>
-            
+
             <p style="font-size: 1.4rem; line-height: 2; margin-bottom: 2rem;">When you help them find the right bottle quickly—when you offer that gift bag—when you make this stop <em>easy</em>—you're not just making a sale.</p>
-            
+
             <p style="font-size: 1.8rem; font-weight: bold; text-align: center; margin-top: 3rem; line-height: 1.6;">You're sending them home.</p>
-            
+
             <p style="font-size: 1.3rem; text-align: center; margin-top: 2rem; opacity: 0.9;">And they'll remember that.</p>
         </div>
     </div>
 
-    <script>
-        // Intersection Observer for fade-in animations
-        // Only run on non-mobile to keep it simple and safe
-        if (window.innerWidth > 768) {
-            const fadeElements = document.querySelectorAll('.fade-in, .stat-box');
-            
-            const fadeObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.2 });
 
-            fadeElements.forEach(el => fadeObserver.observe(el));
-
-            // Sticky section animation logic
-            const stickySection = document.querySelector('.sticky-section');
-            const line1 = document.getElementById('line1');
-            const line2 = document.getElementById('line2');
-            const line3 = document.getElementById('line3');
-            const plainBottle = document.getElementById('plain-bottle');
-            const fancyBottle = document.getElementById('fancy-bottle');
-
-            window.addEventListener('scroll', () => {
-                if (!stickySection) return;
-                
-                const rect = stickySection.getBoundingClientRect();
-                const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
-
-                if (progress < 0.33) {
-                    line1.classList.add('visible');
-                    line2.classList.remove('visible');
-                    line3.classList.remove('visible');
-                    plainBottle.style.transform = 'scale(1)';
-                    plainBottle.style.opacity = '1';
-                    fancyBottle.style.transform = 'scale(1)';
-                    fancyBottle.style.opacity = '1';
-                } else if (progress < 0.66) {
-                    line1.classList.add('visible');
-                    line2.classList.add('visible');
-                    line3.classList.remove('visible');
-                    plainBottle.style.transform = 'scale(0.9)';
-                    plainBottle.style.opacity = '0.6';
-                    fancyBottle.style.transform = 'scale(1.1)';
-                    fancyBottle.style.opacity = '1';
-                } else {
-                    line1.classList.add('visible');
-                    line2.classList.add('visible');
-                    line3.classList.add('visible');
-                    plainBottle.style.transform = 'scale(0.8)';
-                    plainBottle.style.opacity = '0.4';
-                    fancyBottle.style.transform = 'scale(1.15)';
-                    fancyBottle.style.opacity = '1';
-                }
-            });
-        }
-    </script>
+    </main>
     <footer class="footer-logo">
-        <img src="/logo_footer.png?v=3" alt="Footer logo" loading="eager" onerror="this.onerror=null; this.src='/mobile/logo_footer.png?v=3';">
+        <img src="/logo_footer.png?v=3" alt="Cascadia Liquor" loading="eager" onerror="this.onerror=null; this.src='/mobile/logo_footer.png?v=3';">
     </footer>
     <script type="module">
       import { track } from "https://cdn.skypack.dev/@vercel/analytics";

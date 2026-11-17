@@ -16,3 +16,8 @@ export function middleware(req: NextRequest) {
 
   return NextResponse.next();
 }
+
+// Only route the guide entry point; shared assets and other pages must stay reachable.
+export const config = {
+  matcher: ["/", "/index.html"],
+};
