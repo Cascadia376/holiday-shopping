@@ -467,6 +467,8 @@
     <meta name="description" content="The Last Stop — Cascadia’s field guide to helping holiday guests find the right gift and get home happy.">
     <link rel="stylesheet" href="/holiday.css">
     <script src="/holiday.js" defer></script>
+    <link rel="stylesheet" href="/opening.css">
+    <script src="/opening.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#read">Skip to the guide</a>
@@ -475,24 +477,46 @@
         <span class="header-note">A FIELD GUIDE FOR DECEMBER</span>
         <details class="guide-index">
             <summary>Index <span aria-hidden="true">☰</span></summary>
-            <nav aria-label="Guide chapters"><a href="#read"><span>01</span>Understanding the December Shopper</a><a href="#chapter-2"><span>02</span>The Three Types of Gift Buyers</a><a href="#chapter-3"><span>03</span>The Package Tells the Story</a><a href="#chapter-4"><span>04</span>Trust the Package</a><a href="#chapter-5"><span>05</span>You Know More Than You Think</a><a href="#chapter-6"><span>06</span>Always Ask the Budget</a><a href="#chapter-7"><span>07</span>The Simple Rules That Work</a><a href="#chapter-8"><span>08</span>The Checkout Save</a><a href="#chapter-9"><span>09</span>Don't Fear the Locked Cabinet</a><a href="#chapter-10"><span>10</span>Low and No ABV 🥤</a><a href="#chapter-11"><span>11</span>You're Not Selling—You're Rescuing</a></nav>
+            <nav aria-label="Guide chapters"><a href="#opening"><span>↗</span>The opening story</a><a href="#first-choice"><span>↗</span>Your first guest</a><a href="#read"><span>01</span>Understanding the December Shopper</a><a href="#chapter-2"><span>02</span>The Three Types of Gift Buyers</a><a href="#chapter-3"><span>03</span>The Package Tells the Story</a><a href="#chapter-4"><span>04</span>Trust the Package</a><a href="#chapter-5"><span>05</span>You Know More Than You Think</a><a href="#chapter-6"><span>06</span>Always Ask the Budget</a><a href="#chapter-7"><span>07</span>The Simple Rules That Work</a><a href="#chapter-8"><span>08</span>The Checkout Save</a><a href="#chapter-9"><span>09</span>Don't Fear the Locked Cabinet</a><a href="#chapter-10"><span>10</span>Low and No ABV 🥤</a><a href="#chapter-11"><span>11</span>You're Not Selling—You're Rescuing</a></nav>
         </details>
     </header>
     <main id="top">
-    <section class="hero" aria-labelledby="guide-title">
-        <p class="hero-kicker">GOOD GIFTS. LESS GUESSWORK.</p>
-        <h1 id="guide-title"><span>The Last</span> <em>Stop<span class="title-dot">.</span></em></h1>
-        <div class="hero-scene" aria-hidden="true">
-            <div class="gift-bag"><span>OH,<br>GOOD.</span></div>
-            <div class="hero-bottle"><div class="hero-bottle-label">THE<br>GOOD<br><em>stuff.</em></div></div>
-            <span class="scene-star">✳</span>
-            <span class="scene-note">a little help.<br>a great gift.</span>
+    <section class="scroll-story" id="opening" aria-labelledby="guide-title">
+      <div class="story-stage">
+        <div class="story-grain" aria-hidden="true"></div>
+        <div class="story-title"><p class="eyebrow">CASCADIA / THE HOLIDAY FIELD GUIDE</p><h1 id="guide-title">The Last<br><em>Stop<span>.</span></em></h1></div>
+        <div class="story-floor" aria-hidden="true"></div>
+        <div class="story-sun" aria-hidden="true"></div>
+        <img class="story-guest" src="/art/list-keeper.webp" alt="A guest in a mustard raincoat, carrying shopping bags and a folded umbrella." width="1024" height="1536" fetchpriority="high">
+        <div class="errand-list" aria-hidden="true"><span class="list-hole"></span><strong>Just a few things…</strong><span>✓ Groceries</span><span>✓ Wrapping paper</span><span>✓ Something for Mum</span><span>✓ Pick up the parcel</span><span>□ A gift for the host</span><span class="list-last">□ Finally. Go home.</span></div>
+        <div class="story-beats">
+          <div class="story-beat" data-beat="0"><span class="eyebrow">01 / ONE MORE STOP</span><h2>December is<br>a lot to carry.</h2><p>The bags. The weather. The one gift they almost forgot.</p></div>
+          <div class="story-beat" data-beat="1"><span class="eyebrow">02 / THE LIST GETS LONGER</span><h2>“Oh. And something<br>for the host.”</h2><p>They don't need the whole shelf explained.<br>They need a little help choosing.</p></div>
+          <div class="story-beat" data-beat="2"><span class="eyebrow">03 / YOU'VE GOT THIS</span><h2>One good question.<br>A much easier stop.</h2><p>Start with the person they're buying for.<br>Then ask what they want to spend.</p></div>
         </div>
-        <div class="hero-bottom">
-            <p class="subtitle">The liquor store is the final errand.<br>They're tired, they're done, and they really need your help.</p>
-            <a class="start-link" href="#read">Make their last stop a good one <span aria-hidden="true">↘</span></a>
+        <div class="story-bottom"><button type="button" class="motion-toggle" aria-pressed="false">Turn motion off</button><span class="scroll-cue">SCROLL TO UNFOLD THE STORY <span aria-hidden="true">↓</span></span><a href="#first-choice">Skip to the guest encounter ↗</a></div>
+        <div class="story-progress" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+    <section class="guest-encounter" id="first-choice" aria-labelledby="encounter-heading">
+      <div class="encounter-intro"><span class="eyebrow">YOUR FIRST GUEST / A LITTLE HELP GOES A LONG WAY</span><h2 id="encounter-heading">“I need a gift.<br><em>Where do I start?”</em></h2><p>Try asking: <strong>“Who are you shopping for?”</strong><br>Choose a reply to see where the conversation goes.</p></div>
+      <div class="recipient-choices" role="group" aria-label="Who is the guest shopping for?">
+        <button type="button" data-recipient="coworker" aria-pressed="false"><span class="tag-hole" aria-hidden="true"></span><small>FOR / 01</small><strong>A coworker</strong><span>“I don't know them that well.”</span></button>
+        <button type="button" data-recipient="enthusiast" aria-pressed="false"><span class="tag-hole" aria-hidden="true"></span><small>FOR / 02</small><strong>A wine lover</strong><span>“They know what they like.”</span></button>
+        <button type="button" data-recipient="host" aria-pressed="false"><span class="tag-hole" aria-hidden="true"></span><small>FOR / 03</small><strong>Tonight's host</strong><span>“The invitation was… last-minute.”</span></button>
+      </div>
+      <noscript><p>Ask who the gift is for, what they enjoy, and how much the guest wants to spend. Use that information to offer two thoughtful options.</p></noscript>
+      <div class="choice-feedback" aria-live="polite" aria-atomic="true"><p>Three different gifts. The same helpful first question.</p></div>
+      <div class="bottle-discovery" hidden>
+        <div class="shelf-heading"><span class="eyebrow">TWO GOOD OPTIONS / LESS GUESSWORK</span><h3>A little direction.<br><em>A clearer choice.</em></h3><p class="bottle-context"></p></div>
+        <div class="study-cards">
+          <article class="study-card"><div class="bottle-window bottle-one" role="img" aria-label="Illustrative white wine bottle, Study 01"></div><span class="paper-note">Start here.</span><div class="study-copy"><span class="eyebrow">OPTION 01</span><h4 class="option-title"></h4><p class="option-summary"></p><details><summary>A useful way to explain it</summary><p class="option-detail"></p></details></div></article>
+          <article class="study-card"><div class="bottle-window bottle-two" role="img" aria-label="Illustrative red wine bottle, Study 02"></div><span class="paper-note">Or this.</span><div class="study-copy"><span class="eyebrow">OPTION 02</span><h4 class="option-title"></h4><p class="option-summary"></p><details><summary>A useful way to explain it</summary><p class="option-detail"></p></details></div></article>
         </div>
-        <span class="hero-edition">CASCADIA LIQUOR / THE HOLIDAY EDITION</span>
+        <p class="study-disclaimer">Illustrative bottle studies. Final OND products, prices, and recommendations will be reviewed before release.</p>
+        <div class="encounter-end"><span aria-hidden="true">✓</span><p>You haven't explained every bottle.<br><strong>You've helped someone take the next step.</strong></p></div>
+      </div>
+      <div class="prototype-end"><span class="eyebrow">END OF THE OPENING PREVIEW</span><p>Next in the story: the holiday table, the thoughtful host, and the gift bag save.</p><a href="#read">Continue to the existing guide ↓</a><a href="#opening">Replay the opening ↑</a></div>
     </section>
 
     <div class="section">
