@@ -1,25 +1,31 @@
-# The Last Stop — opening prototype
+# The Last Stop — holiday story preview
 
-The first scene uses native scroll with a sticky stage, a generated transparent character cutout, an independently revealed paper list, moving backdrop, and three text beats. The first guest encounter offers three recipient choices and two illustrative bottle cards per choice. It is an opening prototype, not the complete training course.
+A playable holiday education story: arrival and recipient choice, holiday table, inclusive hosting, gift presentation, Den Rewards conversation, a relaxed departure, and a three-question practice check. The original field notes remain available below the story.
 
 ## Content boundaries
 
-Bottle Study 01 and 02 are generated placeholders, not OND recommendations. Product photos, prices and pairing claims require the product review described in the November 9 brief. Completion tracking, the remaining story scenes, Den Rewards training and the course knowledge check are not implemented in this prototype. The original guide follows the prototype and has not received its planned content review.
+Bottle Study 01 and 02 are illustrative placeholders, not approved OND recommendations. Real product photos, availability, prices and pairing recommendations still require product review. Den Rewards prompts refer to current training without inventing benefits. The practice check provides local feedback only; it does not submit scores or record staff completion. Production training integration remains outstanding.
 
-## Assets
+Unsupported shopping percentages, packaging-as-quality claims, bottle-shape sweetness shortcuts and pressure to exceed a guest’s spending range have been removed from the supporting guide. A final Operations content review is still needed.
 
-Built-in image generation was used with the approved concept board as reference. Original PNGs were encoded as WebP with alpha preserved. The character is one composite sprite; bags, arms and scarf are not separately rigged in this first prototype. List, text and backdrop move independently.
+## Assets and motion
 
-- `public/art/list-keeper.webp`: full-body adult List Keeper in a mustard raincoat, green/cream scarf, dark trousers and green boots; phone, pink/kraft bags and folded umbrella; transparent photographic paper-collage cutout matching the approved board; no list, bottles, text or background.
-- `public/art/bottle-studies.webp`: two front-facing generic photographic wine bottles; green capsule white wine marked STUDY 01 and burgundy capsule red wine marked STUDY 02; transparent background, no real brand or tasting claims.
+Generated transparent PNGs were encoded as WebP with alpha preserved:
+- list-keeper.webp: adult guest arriving with phone, shopping bags and umbrella.
+- bottle-studies.webp: two generic, labelled study bottles.
+- holiday-table.webp: tactile paper-collage holiday table.
+- guest-ready.webp: matching guest departing with a gift bag.
 
-## Behavior
+The character uses two composite poses; limbs are not separately rigged. Lists, text, table tickets, an extra place setting and CSS gift-bag parts animate independently. Native scroll controls sticky stages through passive listeners and requestAnimationFrame. Gift-bag folds, tissue and ribbon reveal as the learner scrolls.
 
-- Native scrolling controls transforms through a passive listener and a single scheduled animation frame.
-- OS reduced-motion preference disables choreography. A visible control also lets the reader turn motion off. All beats remain readable without animation or JavaScript.
-- Native buttons/details support keyboard operation. Selected recipient state is restored using optional session storage; no identifying information is collected.
-- Original desktop/mobile entry routes remain; both share the same opening code and art.
+## Interaction and accessibility
+
+Recipient choices, pairing practice, inclusive-host prompts and Den responses use native buttons. The final check uses labelled radio groups with required answers, score feedback and retry. Only recipient choice is optionally restored in session storage; no identifying information is collected.
+
+The visible motion toggle and OS reduced-motion preference provide a static reading mode. Both HTML entry points share scripts, styles and art. All story beats are present in the unenhanced document.
 
 ## Validation
 
-Production build and JavaScript syntax checks passed. Visually checked desktop and 390px iframe layout, scroll progression, all three recipient responses, expandable explanations, Enter-key selection, session restoration and the motion-off reading state. No horizontal overflow observed at 390px. The existing third-party analytics module reports a missing `track` export in the local browser; this pre-existing issue is outside this opening prototype and does not block its interactions.
+The previous opening was visually checked on desktop and at 390px, including choices, keyboard selection, session restoration and motion-off mode. Browser policy blocked interaction QA for the new continuation, so its visual/interaction acceptance remains pending. Source checks cover anchors, duplicate IDs, asset existence and JavaScript syntax; the production build is checked before publishing.
+
+The pre-existing third-party analytics module reported a missing track export in earlier browser testing; this is outside the story implementation.

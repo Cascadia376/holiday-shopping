@@ -51,6 +51,7 @@
     motionToggle.textContent = motionOff() ? 'Motion is off' : 'Turn motion off';
     if (manualMotionOff && !reducedMotion.matches) motionToggle.textContent = 'Turn motion on';
     motionToggle.disabled = reducedMotion.matches;
+    document.dispatchEvent(new Event('storymotionchange'));
     activeBeat = -1;
     if (motionOff()) {
       beats.forEach(beat => { beat.removeAttribute('aria-hidden'); beat.classList.remove('is-current'); });
