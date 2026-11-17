@@ -37,3 +37,9 @@ The arrival now settles into place with a slight carrying bob and staggered list
 All movement is driven by scroll and reverses when scrolling back. CSS transforms apply only while motion is enabled. New decorative props are hidden from assistive technology; controls and lesson text remain native HTML. The character still uses composite poses rather than separately articulated limbs. No new product or completion-tracking work is included.
 
 Validation for this pass: production build, JavaScript syntax, whitespace and both entry-point structure checks passed. Browser interaction and visual QA remain pending because the earlier browser policy restriction has not been bypassed.
+
+## Field Note 05 — confidence shelf
+
+Replaces the static emoji grid with a dedicated scroll scene. Eight decorative bottle silhouettes rotate and move from a scattered arrangement into two shelf rows; labels and a paper confidence note appear as the lesson progresses. The follow-on activity offers eight native style buttons and a live pocket prompt with Ask / Look up / Explain guidance, plus a one-bottle shift exercise and an expandable colleague-help script.
+
+The silhouettes represent categories, not stocked products. No prices, availability or bottle-specific tasting claims are invented. The scene uses the shared reduced-motion/static-reading behavior. Build, JavaScript syntax, balanced section/div structure, unique IDs, anchors, assets and eight category controls checked on both HTML entry points. Visual QA remains pending under the existing browser restriction.

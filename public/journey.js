@@ -16,6 +16,9 @@
       const opening = clamp((p - 0.15) / 0.45);
       const values = {
         '--scene-progress': p,
+        '--shelf-order': clamp((p - 0.12) / 0.48),
+        '--shelf-labels': clamp((p - 0.48) / 0.2),
+        '--shelf-sticker': clamp((p - 0.73) / 0.18),
         '--toast-close': clamp((p - 0.15) / 0.45),
         '--toast-fill': clamp((p - 0.05) / 0.3),
         '--toast-cheers': clamp((p - 0.64) / 0.15),

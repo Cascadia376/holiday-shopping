@@ -476,6 +476,8 @@
     <script src="/journey.js" defer></script>
     <link rel="stylesheet" href="/choreography.css">
     <script src="/choreography.js" defer></script>
+    <link rel="stylesheet" href="/field-five.css">
+    <script src="/field-five.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#first-choice">Skip to the first activity</a>
@@ -713,57 +715,30 @@
         </div>
     </div>
 
-    <div class="section">
-        <div class="content fade-in">
-            <span class="chapter-number" aria-hidden="true">FIELD NOTE / 05</span><h2 id="chapter-5" tabindex="-1">You Know More Than You Think</h2>
-            <p>You don’t need every answer. You need a few reliable recommendations and the confidence to ask for help.</p>
 
-            <p>You don't need to be a sommelier. You don't need to know every vineyard in Burgundy. You need to know your arsenal—a solid lineup at different price points.</p>
-
-            <h3>Build Your Go-To Grid</h3>
-            <div class="wine-grid">
-                <div class="wine-category">
-                    <div class="wine-emoji">🤍</div>
-                    <div class="wine-type">Pinot Grigio</div>
-                </div>
-                <div class="wine-category">
-                    <div class="wine-emoji">🍋</div>
-                    <div class="wine-type">Sauv Blanc</div>
-                </div>
-                <div class="wine-category">
-                    <div class="wine-emoji">🧈</div>
-                    <div class="wine-type">Chardonnay</div>
-                </div>
-                <div class="wine-category">
-                    <div class="wine-emoji">🥂</div>
-                    <div class="wine-type">Sparkling</div>
-                </div>
-                <div class="wine-category">
-                    <div class="wine-emoji">🍒</div>
-                    <div class="wine-type">Pinot Noir</div>
-                </div>
-                <div class="wine-category">
-                    <div class="wine-emoji">🍷</div>
-                    <div class="wine-type">Cabernet</div>
-                </div>
-                <div class="wine-category">
-                    <div class="wine-emoji">🍇</div>
-                    <div class="wine-type">Malbec</div>
-                </div>
-                <div class="wine-category">
-                    <div class="wine-emoji">💜</div>
-                    <div class="wine-type">Merlot</div>
-                </div>
-            </div>
-
-            <p>Pick 2-3 bottles in each category. One at $15-18. One at $22-28. One at $35-45. Know them by name. Know what region they're from. That's it.</p>
-
-            <div class="tip-card">
-                <h4>💡 Make It Stick</h4>
-                <p>Read the shift starters. Refer to the roaming tasting notes. Write them down. Keep the list in your pocket. By week two of December, these recommendations will be automatic. Confidence isn't about knowing everything—it's about knowing your picks cold.</p>
-            </div>
+    <section class="journey-scene confidence-story" aria-labelledby="chapter-5" data-scene="confidence">
+      <div class="journey-stage">
+        <div class="scene-copy"><span class="chapter-number">FIELD NOTE / 05</span><h2 id="chapter-5" tabindex="-1">You know more<br><em>than you think.</em></h2>
+          <div class="scene-beats">
+            <div class="scene-beat"><h3>A whole wall of wine?</h3><p>That can feel like a lot to remember. Start with a few bottles you can explain confidently.</p></div>
+            <div class="scene-beat"><h3>Give your favourites a place.</h3><p>Build a small shortlist across familiar styles and spending ranges. Learn one useful reason to recommend each.</p></div>
+            <div class="scene-beat"><h3>Now you have a starting point.</h3><p>Ask what the guest enjoys. Choose two suitable options. Explain the difference in everyday language.</p></div>
+          </div>
         </div>
-    </div>
+        <div class="confidence-shelf" aria-hidden="true"><div class="shelf-slot" style="--scatter-x:55px;--scatter-y:30px;--lean:-24deg"><div class="shelf-bottle"><span>01</span></div><span class="shelf-label">Pinot Grigio</span></div><div class="shelf-slot" style="--scatter-x:-45px;--scatter-y:60px;--lean:18deg"><div class="shelf-bottle"><span>02</span></div><span class="shelf-label">Sauvignon Blanc</span></div><div class="shelf-slot" style="--scatter-x:25px;--scatter-y:15px;--lean:-12deg"><div class="shelf-bottle"><span>03</span></div><span class="shelf-label">Chardonnay</span></div><div class="shelf-slot" style="--scatter-x:-50px;--scatter-y:45px;--lean:26deg"><div class="shelf-bottle"><span>04</span></div><span class="shelf-label">Sparkling</span></div><div class="shelf-slot" style="--scatter-x:45px;--scatter-y:-25px;--lean:20deg"><div class="shelf-bottle"><span>05</span></div><span class="shelf-label">Pinot Noir</span></div><div class="shelf-slot" style="--scatter-x:-30px;--scatter-y:-40px;--lean:-22deg"><div class="shelf-bottle"><span>06</span></div><span class="shelf-label">Cabernet</span></div><div class="shelf-slot" style="--scatter-x:40px;--scatter-y:-10px;--lean:14deg"><div class="shelf-bottle"><span>07</span></div><span class="shelf-label">Malbec</span></div><div class="shelf-slot" style="--scatter-x:-55px;--scatter-y:-35px;--lean:-17deg"><div class="shelf-bottle"><span>08</span></div><span class="shelf-label">Merlot</span></div><span class="shelf-sticker">A few good picks.<br><strong>A lot more confidence.</strong></span></div>
+        <div class="journey-footer"><span>SCROLL TO SORT YOUR SHELF</span><a href="#shelf-practice">Try a style ↓</a></div><div class="journey-meter" aria-hidden="true"></div>
+      </div>
+    </section>
+    <section class="shelf-practice" id="shelf-practice" aria-labelledby="shelf-practice-title">
+      <div class="shelf-practice-heading"><span class="eyebrow">MAKE IT YOURS / ONE STYLE AT A TIME</span><h2 id="shelf-practice-title">Pick a style.<br><em>Find your opening line.</em></h2><p>Choose a category to practise the conversation. Then use your store’s tasting notes to find a bottle that fits.</p></div>
+      <div class="shelf-style-choices" role="group" aria-label="Choose a wine style"><button type="button" data-shelf-style="0" aria-pressed="true" aria-controls="shelf-coaching">Pinot Grigio</button><button type="button" data-shelf-style="1" aria-pressed="false" aria-controls="shelf-coaching">Sauvignon Blanc</button><button type="button" data-shelf-style="2" aria-pressed="false" aria-controls="shelf-coaching">Chardonnay</button><button type="button" data-shelf-style="3" aria-pressed="false" aria-controls="shelf-coaching">Sparkling</button><button type="button" data-shelf-style="4" aria-pressed="false" aria-controls="shelf-coaching">Pinot Noir</button><button type="button" data-shelf-style="5" aria-pressed="false" aria-controls="shelf-coaching">Cabernet</button><button type="button" data-shelf-style="6" aria-pressed="false" aria-controls="shelf-coaching">Malbec</button><button type="button" data-shelf-style="7" aria-pressed="false" aria-controls="shelf-coaching">Merlot</button></div>
+      <div class="shelf-coaching" id="shelf-coaching" aria-live="polite" aria-atomic="true">
+        <div class="shelf-coaching-title"><span class="eyebrow">YOUR POCKET PROMPT</span><h3 data-shelf-name>Pinot Grigio</h3><span class="shelf-paper-pin" aria-hidden="true"></span></div>
+        <div class="shelf-coaching-notes"><div><span>01 / ASK</span><p data-shelf-ask>“Is there a Pinot Grigio you already enjoy, or are you trying something new?”</p></div><div><span>02 / LOOK UP</span><p data-shelf-learn>Find two bottles in their spending range. Check the product notes for a clear difference in style.</p></div><div><span>03 / EXPLAIN</span><p data-shelf-say>“Let me show you two options in your range and explain how they compare.”</p></div></div>
+      </div>
+      <div class="shelf-task"><span class="eyebrow">TRY THIS ON YOUR NEXT SHIFT</span><h3>One bottle. One useful detail. One sentence.</h3><p>Pick a bottle from this category. Check its current price and tasting notes, then practise explaining who might enjoy it with a colleague.</p><details><summary>What if I don’t know the answer?</summary><p>“I want to get that right for you. Let me check our notes or bring in someone who knows this bottle.”</p></details></div>
+      <p class="shelf-footnote">Bottle silhouettes are category illustrations. Use current store product information for specific recommendations.</p>
+    </section>
 
         <div class="section">
         <div class="content fade-in">
