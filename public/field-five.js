@@ -13,10 +13,38 @@
     ['Malbec', '“Are you looking for a familiar favourite or a little change?”', 'Find a known option and one alternative. Check the region, current price and a useful detail from the tasting notes.', '“I can show you a familiar direction and another option, and explain the difference.”'],
     ['Merlot', '“Is this for you, or do you know what the person receiving it enjoys?”', 'Check the particular bottle’s style and price. Use the recipient’s preferences to choose your examples.', '“Let’s start with their taste and what you want to spend, then narrow it to two.”'],
   ];
+  const products = JSON.parse(document.getElementById('ond-product-data').textContent);
+  const productImage = document.querySelector('[data-ond-image]');
+  const productLinks = document.querySelector('[data-ond-links]');
+  const productTitle = document.querySelector('[data-ond-title]');
+  const productNote = document.querySelector('[data-ond-note]');
   const buttons = [...document.querySelectorAll('[data-shelf-style]')];
   buttons.forEach(button => button.addEventListener('click', () => {
-    const prompt = prompts[Number(button.dataset.shelfStyle)];
-    if (!prompt) return;
+    const index = Number(button.dataset.shelfStyle);
+    const prompt = prompts[index];
+    const selection = products[index];
+    if (!prompt || !selection) return;
+    productImage.src = selection.image;
+    productImage.alt = selection.products.map(product => product.name + ', ' + product.format).join(' and ') + ' — product illustrations';
+    productTitle.textContent = 'Two ' + selection.category + ' options.';
+    productNote.textContent = index === 6
+      ? 'The OND Copper Moon SKU is the 4L box. Compare the format as well as the wine; do not substitute its 750mL SKU.'
+      : 'Check your store’s current availability and pricing before recommending.';
+    productLinks.replaceChildren(...selection.products.map((product, side) => {
+      const item = document.createElement('li');
+      const label = document.createElement('span');
+      label.className = 'eyebrow';
+      label.textContent = side === 0 ? 'LEFT / OPTION 01' : 'RIGHT / OPTION 02';
+      const link = document.createElement('a');
+      link.href = product.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = product.name + ' ↗';
+      const format = document.createElement('span');
+      format.textContent = product.format + ' · SKU ' + product.sku;
+      item.append(label, link, format);
+      return item;
+    }));
     buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
     ['name', 'ask', 'learn', 'say'].forEach((key, index) => {
       panel.querySelector(`[data-shelf-${key}]`).textContent = prompt[index];
