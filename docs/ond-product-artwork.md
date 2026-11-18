@@ -40,3 +40,15 @@ Create one transparent-background realistic product sprite pair for a holiday ed
 
 Create one transparent-background realistic product sprite pair for a holiday education website. Input image 1 is the exact reference for LEFT Mission Hill Reserve Merlot 750mL. Input image 2 is the exact reference for RIGHT le Fat Bastard Merlot 750mL. Preserve each real product's distinctive silhouette, cap, glass color, label artwork, brand name and varietal accurately. Photorealistic tactile editorial product cutouts, real glass reflections, crisp printed paper labels, natural soft studio lighting; absolutely not vector illustrations or cartoon icons. Two complete upright products side by side, separated by generous transparent gap, facing forward, full caps and bases visible, no overlap. Composition square, objects fill 85 percent height, centered at 27% and 73% horizontal positions. Genuine alpha transparency, no background, no ground plane, no props, no price stickers, no captions outside labels, no gift bag. Preserve product identity; do not redesign labels. Both bottles are 750mL; equal visual height.
 
+
+## November 18 revision: individual bottle exploration
+
+Replaced Copper Moon SKU 881490 (4L box) with Alamos Mendoza Malbec SKU 467951 (750mL bottle), verified against Cascadia’s catalogue on November 18. Alamos was not confirmed on the checked OND sheets; the interface explicitly identifies it as a catalogue alternative. Catena remains the OND Malbec example.
+
+`malbec-v2.webp` is a new transparent Catena/Alamos pair generated from the two catalogue reference photographs. Prompt: realistic premium product illustration; Catena left and Alamos right; faithful label artwork; upright full bottles centered within separate halves; no props or extra text. The old asset remains for provenance but is not referenced by the guide.
+
+All sixteen products have short descriptions and source URLs in `public/ond-products.json`, mirrored in both HTML entry points. Descriptions are paraphrased from the catalogue or linked producer pages. CedarCreek and Santa Carolina have conservative origin/product descriptions because the checked catalogue did not supply useful tasting notes. No price or inventory quantities are embedded.
+
+Each bottle on the shelf and in the selected pair opens a native modal dialog. The selected half of the transparent artwork is enlarged with a brief entrance animation. Native dialog focus containment, Escape, close button, backdrop dismissal and return focus are supported. Motion-off and reduced-motion preferences skip the animation. The original static artwork and product links remain available without JavaScript.
+
+Validation: JavaScript syntax, production build and manifest/HTML/source consistency checks. Browser visual and interaction QA remains pending because browser access was blocked in this session.

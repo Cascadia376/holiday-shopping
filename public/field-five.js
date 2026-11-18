@@ -19,16 +19,95 @@
   const productTitle = document.querySelector('[data-ond-title]');
   const productNote = document.querySelector('[data-ond-note]');
   const buttons = [...document.querySelectorAll('[data-shelf-style]')];
+  let activeCategory = 0;
+  let returnFocus = null;
+  const dialog = document.createElement('dialog');
+  dialog.className = 'bottle-dialog';
+  dialog.setAttribute('aria-labelledby', 'bottle-dialog-title');
+  dialog.setAttribute('aria-describedby', 'bottle-dialog-description');
+  dialog.innerHTML = `<button type="button" class="bottle-close" autofocus aria-label="Close bottle details">Close ×</button>
+    <div class="bottle-detail-layout"><div class="bottle-portrait" role="img"></div>
+    <div class="bottle-detail-copy"><p class="eyebrow" data-bottle-category></p>
+    <h2 id="bottle-dialog-title"></h2><p class="bottle-format"></p>
+    <p id="bottle-dialog-description"></p><p class="bottle-selection-note"></p>
+    <a class="bottle-product-link" target="_blank" rel="noopener noreferrer">View product ↗</a>
+    <a class="bottle-source-link" target="_blank" rel="noopener noreferrer">Description source ↗</a>
+    <p class="bottle-smallprint">Check your store’s current price, availability and vintage.</p></div></div>`;
+  document.body.append(dialog);
+  const portrait = dialog.querySelector('.bottle-portrait');
+  function openBottle(category, side, trigger) {
+    const pair = products[category];
+    const product = pair?.products[side];
+    if (!product || dialog.open) return;
+    returnFocus = trigger;
+    portrait.style.backgroundImage = `url("${pair.image}")`;
+    portrait.style.backgroundPosition = side === 0 ? 'left center' : 'right center';
+    portrait.setAttribute('aria-label', product.name + ' bottle illustration');
+    dialog.querySelector('[data-bottle-category]').textContent = pair.category;
+    dialog.querySelector('#bottle-dialog-title').textContent = product.name;
+    dialog.querySelector('.bottle-format').textContent = product.format + ' · SKU ' + product.sku;
+    dialog.querySelector('#bottle-dialog-description').textContent = product.description;
+    dialog.querySelector('.bottle-selection-note').textContent = product.sku === '467951' ? 'Catalogue alternative · OND placement not confirmed.' : 'From the 2026 OND selection.';
+    dialog.querySelector('.bottle-product-link').href = product.url;
+    dialog.querySelector('.bottle-source-link').href = product.descriptionSource;
+    dialog.showModal();
+    document.documentElement.classList.add('bottle-details-open');
+    if (document.documentElement.classList.contains('motion-story') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && portrait.animate) {
+      portrait.animate([{transform:'translateY(24px) scale(.78)',opacity:0},{transform:'translateY(0) scale(1)',opacity:1}],{duration:350,easing:'cubic-bezier(.2,.8,.2,1)'});
+    }
+  }
+  dialog.querySelector('.bottle-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    const rect = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+  });
+  // Native dialog handles Escape and keeps keyboard focus inside while open.
+  dialog.addEventListener('close', () => {
+    document.documentElement.classList.remove('bottle-details-open');
+    returnFocus?.focus({preventScroll:true});
+  });
+  function addBottleButtons(container, categoryGetter) {
+    container.classList.add('bottle-hit-area');
+    return [0, 1].map(side => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'bottle-hit bottle-hit-' + side;
+      button.setAttribute('aria-haspopup', 'dialog');
+      button.setAttribute('aria-label', 'Explore ' + products[categoryGetter()].products[side].name);
+      button.addEventListener('click', () => openBottle(categoryGetter(), side, button));
+      container.append(button);
+      return button;
+    });
+  }
+  const shelf = document.querySelector('.confidence-shelf');
+  shelf.removeAttribute('aria-hidden');
+  shelf.querySelectorAll('.shelf-bottle').forEach((container, category) => addBottleButtons(container, () => category));
+  // Wrap the image so the hit areas cover only its rendered square, not the panel padding.
+  const art = productImage.parentElement;
+  const imageWrap = document.createElement('div');
+  art.insertBefore(imageWrap, productImage);
+  imageWrap.append(productImage);
+  const pairButtons = addBottleButtons(imageWrap, () => activeCategory);
+  const hint = document.createElement('p');
+  hint.className = 'bottle-explore-hint';
+  hint.textContent = 'Tap a bottle to take a closer look ↗';
+  art.append(hint);
+  function updatePairButtons() {
+    pairButtons.forEach((button, side) => button.setAttribute('aria-label', 'Explore ' + products[activeCategory].products[side].name));
+  }
   buttons.forEach(button => button.addEventListener('click', () => {
     const index = Number(button.dataset.shelfStyle);
     const prompt = prompts[index];
     const selection = products[index];
     if (!prompt || !selection) return;
+    activeCategory = index;
+    updatePairButtons();
+    document.querySelector('.ond-pair-info .eyebrow').textContent = index === 6 ? 'OND PICK + CATALOGUE ALTERNATIVE' : 'FROM THE 2026 OND SELECTION';
     productImage.src = selection.image;
     productImage.alt = selection.products.map(product => product.name + ', ' + product.format).join(' and ') + ' — product illustrations';
     productTitle.textContent = 'Two ' + selection.category + ' options.';
     productNote.textContent = index === 6
-      ? 'The OND Copper Moon SKU is the 4L box. Compare the format as well as the wine; do not substitute its 750mL SKU.'
+      ? 'Catena is an OND selection. Alamos is a catalogue alternative, not confirmed on the checked OND lists.'
       : 'Check your store’s current availability and pricing before recommending.';
     productLinks.replaceChildren(...selection.products.map((product, side) => {
       const item = document.createElement('li');
