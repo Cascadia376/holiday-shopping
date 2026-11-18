@@ -43,3 +43,13 @@ Validation for this pass: production build, JavaScript syntax, whitespace and bo
 Replaces the static emoji grid with a dedicated scroll scene. Eight decorative bottle silhouettes rotate and move from a scattered arrangement into two shelf rows; labels and a paper confidence note appear as the lesson progresses. The follow-on activity offers eight native style buttons and a live pocket prompt with Ask / Look up / Explain guidance, plus a one-bottle shift exercise and an expandable colleague-help script.
 
 The silhouettes represent categories, not stocked products. No prices, availability or bottle-specific tasting claims are invented. The scene uses the shared reduced-motion/static-reading behavior. Build, JavaScript syntax, balanced section/div structure, unique IDs, anchors, assets and eight category controls checked on both HTML entry points. Visual QA remains pending under the existing browser restriction.
+
+## Conversation cast — November 18
+
+The original concept sheet’s Thoughtful Gifter (teal coat, grey beard, glasses and plaid scarf) and Last-Minute Invite (striped sweater, olive jacket, curls and shoulder bag) now join the existing List Keeper as reusable transparent WebP sprites. Built-in image generation used the original cast sheet as the identity/style reference. Prompts requested faithful standalone three-quarter character portraits, conversational gestures, tactile paper-collage realism, no text or scenery, and alpha transparency. Assets: `public/art/thoughtful-gifter.webp` and `public/art/last-minute-invite.webp`.
+
+Field Note 06 features the Thoughtful Gifter beside the full spending-range exchange. All seven formal conversations now pair a recurring guest with clearly labelled Guest/You speech bubbles. Portraits also accompany the opening encounter, dinner practice, inclusive-host practice, checkout, gift-bag prompt, Field Note 05 coaching and colleague-help scripts. These are fictional guest characters, not representations of staff.
+
+The shared character stylesheet stacks scenes on mobile. IntersectionObserver triggers one gentle entrance for each character and staggered dialogue movement; no text is hidden or gated behind scrolling. The motion toggle and OS reduced-motion preference cancel active movement. Without JavaScript, the complete illustrated conversation remains visible.
+
+Validation: syntax, build, both HTML structures, seven conversations per entry point, image references and unique IDs checked. Browser visual QA remains pending under the previously reported browser restriction.

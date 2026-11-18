@@ -1,0 +1,41 @@
+/* Recurring guests turn quoted scripts into recognizable encounters. */
+.conversation-character { margin:0; text-align:center; min-width:0; }
+.conversation-character img { display:block; width:100%; height:auto; max-height:350px; object-fit:contain; filter:drop-shadow(4px 8px 3px #172f281b); transform-origin:50% 95%; }
+.conversation-character figcaption { font:italic 19px/1.2 Georgia,serif; margin:10px 0; color:var(--ink); }
+.conversation-character figcaption span { display:block; font:10px/1.5 monospace; letter-spacing:1.4px; margin-bottom:5px; }
+.character-conversation { display:grid; grid-template-columns:minmax(130px,.65fr) minmax(0,1.5fr); gap:28px; align-items:center; padding:28px; background:#e3e8d5; border:0; }
+.conversation-lines { min-width:0; }
+.character-conversation .speech-bubble { position:relative; background:#fffaf0; border:1px solid #172f2826; border-radius:18px 18px 18px 3px; padding:18px 20px; margin:14px 0; font-size:17px; line-height:1.6; }
+.character-conversation .speech-bubble:has(.you) { margin-left:24px; border-radius:18px 18px 3px 18px; background:#f3dba8; }
+.character-conversation .customer,.character-conversation .you { display:block; margin-bottom:5px; color:var(--blue); font:11px/1.4 monospace; text-transform:uppercase; letter-spacing:1px; }
+.conversation-featured { margin:35px -30px; padding:35px; grid-template-columns:1fr 1.5fr; background:#e7b8a8; }
+.conversation-featured .conversation-character img { max-height:460px; }
+.character-compact { width:150px; max-width:100%; margin:0 auto 20px; }
+.character-compact img { height:165px; object-fit:contain; }
+.character-compact figcaption { font-size:15px; }
+.character-intro .character-compact { width:160px; }
+.shelf-coaching-title .character-compact { margin:0 auto 20px; }
+.gift-story .character-compact { width:95px; margin:0 0 12px; }
+.gift-story .character-compact img { height:110px; }
+.gift-story .character-compact figcaption { display:none; }
+.tip-card .character-compact { float:left; width:90px; margin:0 20px 10px 0; }
+.tip-card .character-compact img { height:110px; }
+.tip-card:has(.character-compact) { display:flow-root; }
+@media(max-width:600px) {
+ .character-conversation { grid-template-columns:1fr; padding:20px; gap:8px; }
+ .character-conversation .conversation-character { width:150px; margin:auto; }
+ .character-conversation .conversation-character img { height:210px; }
+ .conversation-featured { margin:28px 0; }
+ .conversation-featured .conversation-character { width:180px; }
+ .conversation-featured .conversation-character img { height:250px; }
+ .character-conversation .speech-bubble { padding:15px; font-size:16px; }
+ .character-conversation .speech-bubble:has(.you) { margin-left:16px; }
+ .character-compact img { height:140px; }
+ .gift-story .character-compact { width:65px; margin-bottom:6px; }
+ .gift-story .character-compact img { height:75px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .conversation-character img,.speech-bubble { animation:none !important; transition:none !important; }
+}
+.gift-story .character-compact { float:left; margin-right:16px; }
+.gift-story .scene-beats { clear:both; }
