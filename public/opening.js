@@ -62,8 +62,9 @@
       const shopperRect = shopperStory.getBoundingClientRect();
       const shopperProgress = clamp((shopperTop - shopperRect.top) / Math.max(1, shopperDistance));
       const shopperEnter = clamp(shopperProgress / 0.18);
-      const copyOut = clamp((shopperProgress - 0.52) / 0.16);
-      const lastFill = clamp((shopperProgress - 0.62) / 0.28);
+      // Hold the complete lesson long enough to read before the closing wipe begins.
+      const copyOut = clamp((shopperProgress - 0.76) / 0.12);
+      const lastFill = clamp((shopperProgress - 0.84) / 0.13);
       const lastExit = clamp((window.innerHeight - shopperRect.bottom) / (window.innerHeight * 0.2));
       shopperStage.style.setProperty('--shopper-progress', shopperProgress);
       shopperStage.style.setProperty('--shopper-enter', shopperEnter);
