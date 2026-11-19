@@ -85,3 +85,5 @@ The review revision removes the flex-centering gap that delayed the December Sho
 The inline blue statistic card is removed from the reading composition. Its original “Last” and 70% sentence now form the full-screen blue scroll-out, so the statistic and transition are a single reveal. The title uses a smaller balanced scale to keep every word inside the viewport. The orange halo is reduced and tucked behind the character instead of occupying an empty quadrant.
 
 The original emphasis sentence—“They don't want to be here. But they need to be here. And they want it to be easy.”—now resolves at the foot of that same blue Last screen. The existing paragraph is repositioned rather than duplicated, preserving the canonical script and reading order.
+
+The parking-lot cutout is constrained to the visual column and its left edge fades to transparency before reaching the reading column. The stronger mobile mask keeps parked cars and cart rails from sitting behind body copy while preserving the environmental scene.

@@ -50,7 +50,7 @@
 .shopper-stage > .stat-box p { display:inline; margin:0; font:clamp(14px,1.05vw,17px)/1.4 Arial,sans-serif; }
 .shopper-collage { grid-column:2; grid-row:1 / span 5; position:relative; align-self:stretch; min-height:min(720px,78svh); }
 .shopper-collage img { position:absolute; max-width:none; object-fit:contain; object-position:bottom; filter:drop-shadow(8px 14px 7px #172f2822); }
-.shopper-collage .shopper-car { z-index:1; width:150%; height:auto; left:-48%; bottom:1%; }
+.shopper-collage .shopper-car { z-index:1; width:132%; height:auto; left:-12%; bottom:1%; -webkit-mask-image:linear-gradient(to right,transparent 0%,transparent 12%,#000 36%); mask-image:linear-gradient(to right,transparent 0%,transparent 12%,#000 36%); }
 .shopper-collage .shopper-person { z-index:2; width:68%; height:94%; right:-2%; bottom:-5%; }
 .shopper-halo { position:absolute; z-index:0; width:min(300px,72%); aspect-ratio:1; right:8%; top:22%; border-radius:50%; background:var(--orange); opacity:.9; box-shadow:0 0 0 22px #ed63331c; }
 .shopper-cue { position:absolute; z-index:3; display:flex; align-items:center; gap:9px; padding:13px 16px; background:#f0e3bd; box-shadow:5px 6px 0 #172f2818; transform:rotate(-5deg); font:14px/1.3 'Courier New',monospace; }
@@ -135,7 +135,7 @@
  .shopper-stage { grid-template-columns:1fr; min-height:980px; }
  .shopper-stage > h2,.shopper-stage > p,.shopper-stage > .stat-box { grid-column:1; }
  .shopper-collage { grid-column:1; grid-row:auto; min-height:470px; }
- .shopper-collage .shopper-car { width:138%; left:-34%; }
+ .shopper-collage .shopper-car { width:126%; left:-6%; }
  .shopper-collage .shopper-person { width:62%; height:100%; right:-1%; }
  .shopper-halo { width:260px; height:260px; right:2%; }
  .shopper-cue { padding:9px 11px; font-size:10px; }
@@ -145,7 +145,7 @@
  .motion-story .shopper-stage h2 { font-size:clamp(38px,10vw,58px); max-width:72%; }
  .motion-story .shopper-stage > p { max-width:68%; font-size:15px; line-height:1.55; }
  .motion-story .shopper-stage .shopper-collage { position:absolute; inset:22% 1% 4% 42%; min-height:0; }
- .motion-story .shopper-stage .shopper-collage .shopper-car { width:155%; left:-60%; bottom:1%; }
+ .motion-story .shopper-stage .shopper-collage .shopper-car { width:126%; left:-4%; bottom:1%; -webkit-mask-image:linear-gradient(to right,transparent 0%,transparent 30%,#000 58%); mask-image:linear-gradient(to right,transparent 0%,transparent 30%,#000 58%); }
  .motion-story .shopper-stage .shopper-collage .shopper-person { width:76%; height:96%; right:-12%; bottom:-5%; }
  .motion-story .shopper-stage > .stat-box { width:auto; padding:7vw; margin:0; gap:24px; }
  .motion-story .shopper-stage > .stat-box .stat-number { font-size:clamp(150px,48vw,300px); }
