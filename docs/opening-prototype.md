@@ -93,3 +93,5 @@ The parking-lot cutout is constrained to the visual column and its left edge fad
 The original three-card grid is now a pinned four-beat scroll story. The Acquaintance, Enthusiast and Surprise each receive a full-panel portrait using the recurring List Keeper, Thoughtful Gifter and Last-Minute Invite cast. Each panel has its own paper colour, oversized sequence mark, emoji seal, typography and entrance direction while preserving the original archetype wording and order.
 
 The final beat resolves all three into the original “Each one needs something different” statement and Your Edge note. Motion is decorative and reversible; static and reduced-motion modes retain the normal three-card document layout with all text visible. Mobile uses masked character cutouts so copy remains readable.
+
+Review refinement: the section title remains anchored above every animated portrait instead of fading away, and the cards move upward into the space beneath it. The emoji seals are hidden in motion mode so the oversized 01/02/03 sequence marks remain clean; the original emoji characters remain in the static document and canonical script.
