@@ -61,3 +61,7 @@ Supersedes the earlier framing that discouraged packaging and bottle-shape short
 Teach System 1 for the initial shortlist and System 2 for a specific uncertainty or requirement. Weight, label finish and punt depth are clues to positioning, not a quantified probability of superior sensory quality. Sweetness should be checked when it is central to the guest’s request. No probabilities are claimed.
 
 Editorial reference: Wine Enthusiast, “What Does Your Bottle Really Say About the Wine?” https://www.wineenthusiast.com/culture/wine/what-does-your-bottle-really-say-about-the-wine/ (regional bottle traditions, premium cuvée packaging, glass cost and weight, and punt conventions). The aisle-scanning examples are practical training applications of those conventions.
+
+## Heuristic illustrations
+
+Added `public/art/bottle-shape-guide.webp` (Bordeaux, Burgundy and Alsace/flute) and `public/art/packaging-cues.webp` (simple and premium presentation). Generated with the built-in image tool: realistic transparent unbranded bottle illustrations, isolated equal-width cells, accurate contrasting silhouettes, and a packaging pair showing label finish and shallow/deep bases. CSS displays each cell above its associated text with accessible image descriptions. These are generic teaching illustrations, not stocked products. Removed the old illustrative dollar amounts from the packaging comparison. Original PNGs were encoded to WebP with transparency preserved.
