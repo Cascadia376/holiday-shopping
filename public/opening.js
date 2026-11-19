@@ -62,16 +62,20 @@
       const shopperRect = shopperStory.getBoundingClientRect();
       const shopperProgress = clamp((shopperTop - shopperRect.top) / Math.max(1, shopperDistance));
       const shopperEnter = clamp(shopperProgress / 0.18);
-      // Hold the complete lesson long enough to read before the closing wipe begins.
-      const copyOut = clamp((shopperProgress - 0.76) / 0.12);
-      const lastFill = clamp((shopperProgress - 0.84) / 0.13);
+      // Hold the lesson, then reveal the restrained blue panel in distinct beats.
+      const copyOut = clamp((shopperProgress - 0.72) / 0.08);
+      const lastPanel = clamp((shopperProgress - 0.78) / 0.06);
+      const lastWord = clamp((shopperProgress - 0.82) / 0.06);
+      const lastStat = clamp((shopperProgress - 0.88) / 0.06);
+      const lastTakeaway = clamp((shopperProgress - 0.94) / 0.05);
       const lastExit = clamp((window.innerHeight - shopperRect.bottom) / (window.innerHeight * 0.2));
       shopperStage.style.setProperty('--shopper-progress', shopperProgress);
       shopperStage.style.setProperty('--shopper-enter', shopperEnter);
       shopperStage.style.setProperty('--shopper-copy-opacity', 1 - copyOut);
-      shopperStage.style.setProperty('--last-fill', lastFill * (1 - lastExit));
-      shopperStage.style.setProperty('--last-scale', 0.06 + lastFill * 0.94);
-      shopperStage.style.setProperty('--last-word-scale', 0.72 + lastFill * 0.28);
+      shopperStage.style.setProperty('--last-panel', lastPanel * (1 - lastExit));
+      shopperStage.style.setProperty('--last-word', lastWord * (1 - lastExit));
+      shopperStage.style.setProperty('--last-stat', lastStat * (1 - lastExit));
+      shopperStage.style.setProperty('--last-takeaway', lastTakeaway * (1 - lastExit));
     }
   }
   function schedulePaint() {
