@@ -65,3 +65,9 @@ Editorial reference: Wine Enthusiast, “What Does Your Bottle Really Say About 
 ## Heuristic illustrations
 
 Added `public/art/bottle-shape-guide.webp` (Bordeaux, Burgundy and Alsace/flute) and `public/art/packaging-cues.webp` (simple and premium presentation). Generated with the built-in image tool: realistic transparent unbranded bottle illustrations, isolated equal-width cells, accurate contrasting silhouettes, and a packaging pair showing label finish and shallow/deep bases. CSS displays each cell above its associated text with accessible image descriptions. These are generic teaching illustrations, not stocked products. Removed the old illustrative dollar amounts from the packaging comparison. Original PNGs were encoded to WebP with transparency preserved.
+
+## Original-script restoration — November 19
+
+The user-supplied original script is restored as the uninterrupted narrative backbone immediately after the opening title: Understanding the December Shopper, The Three Types of Gift Buyers, The Package Tells the Story, Trust the Package, and You're Not Selling—You're Rescuing. The supplied wording, prices, 70% statement, dialogue and order are preserved verbatim. Packaging and character illustrations are presentation additions; they do not replace script text.
+
+Newer interactive scenes are introduced afterward as the Extended Field Guide. Superseded rewritten versions of the original sections are removed from the visible flow. `docs/original-script.txt` is the canonical plain-text copy. `npm run verify:original-script` checks both HTML entry points word-for-word and in order, along with the opening title, opening line and both logos.
