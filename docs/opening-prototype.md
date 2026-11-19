@@ -87,3 +87,9 @@ The inline blue statistic card is removed from the reading composition. Its orig
 The closing sequence uses four restrained scroll beats: the panel turns blue, “Last” appears, the 70% statement appears, and the original emphasis sentence—“They don't want to be here. But they need to be here. And they want it to be easy.”—resolves last. The existing paragraphs are repositioned rather than duplicated, preserving the canonical script and reading order.
 
 The parking-lot cutout is constrained to the visual column and its left edge fades to transparency before reaching the reading column. The stronger mobile mask keeps parked cars and cart rails from sitting behind body copy while preserving the environmental scene.
+
+## Three Types of Gift Buyers — November 19
+
+The original three-card grid is now a pinned four-beat scroll story. The Acquaintance, Enthusiast and Surprise each receive a full-panel portrait using the recurring List Keeper, Thoughtful Gifter and Last-Minute Invite cast. Each panel has its own paper colour, oversized sequence mark, emoji seal, typography and entrance direction while preserving the original archetype wording and order.
+
+The final beat resolves all three into the original “Each one needs something different” statement and Your Edge note. Motion is decorative and reversible; static and reduced-motion modes retain the normal three-card document layout with all text visible. Mobile uses masked character cutouts so copy remains readable.

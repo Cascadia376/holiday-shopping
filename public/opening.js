@@ -6,6 +6,9 @@
   const beats = [...story.querySelectorAll('.story-beat')];
   const shopperStory = document.querySelector('.shopper-story');
   const shopperStage = shopperStory?.querySelector('.shopper-stage');
+  const buyersStory = document.querySelector('.buyers-story');
+  const buyersStage = buyersStory?.querySelector('.buyers-stage');
+  const buyerCards = buyersStage ? [...buyersStage.querySelectorAll('.gift-card')] : [];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let manualMotionOff = false;
   const motionOff = () => reducedMotion.matches || manualMotionOff;
@@ -76,6 +79,25 @@
       shopperStage.style.setProperty('--last-word', lastWord * (1 - lastExit));
       shopperStage.style.setProperty('--last-stat', lastStat * (1 - lastExit));
       shopperStage.style.setProperty('--last-takeaway', lastTakeaway * (1 - lastExit));
+    }
+    if (buyersStory && buyersStage && buyerCards.length) {
+      const buyersTop = parseFloat(getComputedStyle(buyersStage).top) || 0;
+      const buyersDistance = buyersStory.offsetHeight - buyersStage.offsetHeight;
+      const buyersProgress = clamp((buyersTop - buyersStory.getBoundingClientRect().top) / Math.max(1, buyersDistance));
+      const scene = (start, end) => {
+        const enter = clamp((buyersProgress - start) / 0.07);
+        const leave = clamp((buyersProgress - (end - 0.07)) / 0.07);
+        return { opacity: enter * (1 - leave), x: (1 - enter) * 90 - leave * 70 };
+      };
+      const ranges = [[0.1, 0.37], [0.33, 0.6], [0.56, 0.83]];
+      buyersStage.style.setProperty('--buyers-intro', 1 - clamp((buyersProgress - 0.07) / 0.08));
+      buyerCards.forEach((card, index) => {
+        const state = scene(...ranges[index]);
+        card.style.setProperty('--buyer-opacity', state.opacity);
+        card.style.setProperty('--buyer-x', `${state.x}px`);
+        card.style.setProperty('--buyer-image-x', `${(1 - state.opacity) * 45}px`);
+      });
+      buyersStage.style.setProperty('--buyers-resolution', clamp((buyersProgress - 0.8) / 0.1));
     }
   }
   function schedulePaint() {
