@@ -18,7 +18,10 @@ for (const path of ['public/index.html', 'public/mobile.html']) {
   const start = html.indexOf('<section class="original-script"');
   const end = html.indexOf('<div class="extended-guide-intro">', start);
   if (start < 0 || end < 0) throw new Error(`${path}: original script boundary missing`);
-  const scriptHtml = html.slice(start, end).replace(/<figure[\s\S]*?<\/figure>/g, ' ');
+  const scriptHtml = html.slice(start, end)
+    .replace(/<figure[\s\S]*?<\/figure>/g, ' ')
+    .replace(/<div class="shopper-collage"[\s\S]*?(?=<div class="stat-box">)/g, ' ')
+    .replace(/<div class="last-screen"[\s\S]*?<\/div>/g, ' ');
   const actual = decode(scriptHtml.replace(/<[^>]*>/g, ' '))
     .replace(/\s+/g, ' ')
     .replace(/\s+([—.,?!;])/g, '$1')

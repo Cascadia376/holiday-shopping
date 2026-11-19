@@ -73,3 +73,9 @@ The user-supplied original script is restored as the uninterrupted narrative bac
 Newer interactive scenes are introduced afterward as the Extended Field Guide. Superseded rewritten versions of the original sections are removed from the visible flow. `docs/original-script.txt` is the canonical plain-text copy. `npm run verify:original-script` checks both HTML entry points word-for-word and in order, along with the opening title, opening line and both logos.
 
 The opening line now owns the first scroll beat. It begins fading at 5% story progress and is fully gone before the first pink eyebrow and story card enter at 18%, preventing the mobile overlap shown in review. Static and reduced-motion reading modes continue to show all content in normal document flow.
+
+## Opening-to-shopper transition — November 19
+
+The title and first lesson now behave as one continuous scroll scene. Near the end of the blue opening, the handwritten errand list descends beyond its grid and crosses the section boundary. The December Shopper scene uses the recurring List Keeper sprite so the phone, shopping bags and wet-weather clothing directly echo the script; parking lines, a car marker, wrapped gifts and three paper cues extend the second paragraph’s office-party, host-gift and unexpected-plus-one imagery.
+
+As the scene exits, the copy and collage clear and a blue layer expands across the full viewport above the sticky header. The word “Last” scales up until it fills the page, then the layer releases into the next section. The animation reverses with native scrolling and is removed from reduced-motion/static reading mode. Decorative additions are hidden from assistive technology and excluded from the original-script text check.

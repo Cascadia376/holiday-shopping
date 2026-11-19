@@ -4,6 +4,8 @@
   if (!story) return;
   const stage = story.querySelector('.story-stage');
   const beats = [...story.querySelectorAll('.story-beat')];
+  const shopperStory = document.querySelector('.shopper-story');
+  const shopperStage = shopperStory?.querySelector('.shopper-stage');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let manualMotionOff = false;
   const motionOff = () => reducedMotion.matches || manualMotionOff;
@@ -22,6 +24,7 @@
     const reveal = clamp((progress - 0.15) / 0.45);
     // Give the opening line a complete beat before the first story card enters.
     const taglineOpacity = 1 - clamp((progress - 0.05) / 0.09);
+    const listCross = clamp((progress - 0.72) / 0.28);
     const values = {
       '--progress': progress,
       '--guest-x': `${(1 - clamp(progress / 0.35)) * 180}px`,
@@ -42,6 +45,7 @@
       '--list-clip': `${(1 - reveal) * 100}%`,
       '--list-y': `${-25 + reveal * 25}px`,
       '--list-angle': `${12 - reveal * 8}deg`,
+      '--list-cross-y': `${listCross * stage.offsetHeight * 0.5}px`,
     };
     Object.entries(values).forEach(([key, value]) => stage.style.setProperty(key, value));
     const nextBeat = progress < 0.18 ? -1 : progress < 0.46 ? 0 : progress < 0.72 ? 1 : 2;
@@ -51,6 +55,22 @@
         beat.classList.toggle('is-current', index === nextBeat);
         beat.setAttribute('aria-hidden', String(nextBeat < 0 || index !== nextBeat));
       });
+    }
+    if (shopperStory && shopperStage) {
+      const shopperTop = parseFloat(getComputedStyle(shopperStage).top) || 0;
+      const shopperDistance = shopperStory.offsetHeight - shopperStage.offsetHeight;
+      const shopperRect = shopperStory.getBoundingClientRect();
+      const shopperProgress = clamp((shopperTop - shopperRect.top) / Math.max(1, shopperDistance));
+      const shopperEnter = clamp(shopperProgress / 0.18);
+      const copyOut = clamp((shopperProgress - 0.52) / 0.16);
+      const lastFill = clamp((shopperProgress - 0.62) / 0.28);
+      const lastExit = clamp((window.innerHeight - shopperRect.bottom) / (window.innerHeight * 0.2));
+      shopperStage.style.setProperty('--shopper-progress', shopperProgress);
+      shopperStage.style.setProperty('--shopper-enter', shopperEnter);
+      shopperStage.style.setProperty('--shopper-copy-opacity', 1 - copyOut);
+      shopperStage.style.setProperty('--last-fill', lastFill * (1 - lastExit));
+      shopperStage.style.setProperty('--last-scale', 0.06 + lastFill * 0.94);
+      shopperStage.style.setProperty('--last-word-scale', 0.72 + lastFill * 0.28);
     }
   }
   function schedulePaint() {
