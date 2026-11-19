@@ -20,6 +20,8 @@
     const distance = story.offsetHeight - stage.offsetHeight;
     const progress = clamp((top - story.getBoundingClientRect().top) / Math.max(1, distance));
     const reveal = clamp((progress - 0.15) / 0.45);
+    // Give the opening line a complete beat before the first story card enters.
+    const taglineOpacity = 1 - clamp((progress - 0.05) / 0.09);
     const values = {
       '--progress': progress,
       '--guest-x': `${(1 - clamp(progress / 0.35)) * 180}px`,
@@ -34,6 +36,7 @@
       '--guest-angle': `${-4 + progress * 6}deg`,
       '--title-y': `${-progress * 45}px`,
       '--title-opacity': 1 - progress * 0.82,
+      '--tagline-opacity': taglineOpacity,
       '--sun-y': `${progress * 90}px`,
       '--sun-scale': 1 + progress * 0.12,
       '--list-clip': `${(1 - reveal) * 100}%`,
@@ -41,12 +44,12 @@
       '--list-angle': `${12 - reveal * 8}deg`,
     };
     Object.entries(values).forEach(([key, value]) => stage.style.setProperty(key, value));
-    const nextBeat = progress < 0.3 ? 0 : progress < 0.68 ? 1 : 2;
+    const nextBeat = progress < 0.18 ? -1 : progress < 0.46 ? 0 : progress < 0.72 ? 1 : 2;
     if (nextBeat !== activeBeat) {
       activeBeat = nextBeat;
       beats.forEach((beat, index) => {
         beat.classList.toggle('is-current', index === nextBeat);
-        beat.setAttribute('aria-hidden', String(index !== nextBeat));
+        beat.setAttribute('aria-hidden', String(nextBeat < 0 || index !== nextBeat));
       });
     }
   }

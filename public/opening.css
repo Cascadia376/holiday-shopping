@@ -29,6 +29,7 @@
 .motion-story .scroll-story { height:320svh; }
 .motion-story .story-stage { position:sticky; top:88px; height:calc(100svh - 88px); min-height:560px; padding-top:35px; }
 .motion-story .story-title { transform:translateY(var(--title-y,0px)); opacity:var(--title-opacity,1); }
+.motion-story .original-tagline { opacity:var(--tagline-opacity,1); transform:translateY(calc((1 - var(--tagline-opacity,1)) * -10px)); }
 .motion-story .story-guest { transform:translateX(var(--guest-x,60px)) rotate(var(--guest-angle,-5deg)); }
 .motion-story .story-sun { transform:translateY(var(--sun-y,0px)) scale(var(--sun-scale,1)); }
 .motion-story .errand-list { clip-path:inset(0 0 var(--list-clip,100%) 0); transform:translateY(var(--list-y,-20px)) rotate(var(--list-angle,12deg)); }
