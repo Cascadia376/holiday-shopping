@@ -53,3 +53,11 @@ Field Note 06 features the Thoughtful Gifter beside the full spending-range exch
 The shared character stylesheet stacks scenes on mobile. IntersectionObserver triggers one gentle entrance for each character and staggered dialogue movement; no text is hidden or gated behind scrolling. The motion toggle and OS reduced-motion preference cancel active movement. Without JavaScript, the complete illustrated conversation remains visible.
 
 Validation: syntax, build, both HTML structures, seven conversations per entry point, image references and unique IDs checked. Browser visual QA remains pending under the previously reported browser restriction.
+
+## Heuristics correction — November 18
+
+Supersedes the earlier framing that discouraged packaging and bottle-shape shortcuts. Field Notes 03, 04 and 07 now teach rapid pattern recognition: packaging economics and premium positioning, Bordeaux shoulders for a fuller red direction, Burgundy slopes for Pinot Noir, and flutes for aromatic whites and a starting point for off-dry options. Field Note 05 prompts now support scanning and shortlisting rather than requiring research for every recommendation.
+
+Teach System 1 for the initial shortlist and System 2 for a specific uncertainty or requirement. Weight, label finish and punt depth are clues to positioning, not a quantified probability of superior sensory quality. Sweetness should be checked when it is central to the guest’s request. No probabilities are claimed.
+
+Editorial reference: Wine Enthusiast, “What Does Your Bottle Really Say About the Wine?” https://www.wineenthusiast.com/culture/wine/what-does-your-bottle-really-say-about-the-wine/ (regional bottle traditions, premium cuvée packaging, glass cost and weight, and punt conventions). The aisle-scanning examples are practical training applications of those conventions.
