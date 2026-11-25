@@ -1,66 +1,5 @@
 (() => {
   'use strict';
-  const scenes = [...document.querySelectorAll('[data-scene]')];
-  if (!scenes.length) return;
-  const clamp = value => Math.max(0, Math.min(1, value));
-  const enhanced = () => document.documentElement.classList.contains('motion-story');
-  let pendingFrame = 0;
-
-  function paintScenes() {
-    pendingFrame = 0;
-    if (!enhanced()) return;
-    scenes.forEach(scene => {
-      const stage = scene.querySelector('.journey-stage');
-      const offset = parseFloat(getComputedStyle(stage).top) || 0;
-      const p = clamp((offset - scene.getBoundingClientRect().top) / Math.max(1, scene.offsetHeight - stage.offsetHeight));
-      const opening = clamp((p - 0.15) / 0.45);
-      const values = {
-        '--scene-progress': p,
-        '--shelf-order': clamp((p - 0.12) / 0.48),
-        '--shelf-labels': clamp((p - 0.48) / 0.2),
-        '--shelf-sticker': clamp((p - 0.73) / 0.18),
-        '--toast-close': clamp((p - 0.15) / 0.45),
-        '--toast-fill': clamp((p - 0.05) / 0.3),
-        '--toast-cheers': clamp((p - 0.64) / 0.15),
-        '--toast-settle': clamp((p - 0.82) / 0.18),
-        '--gift-tag': clamp((p - 0.73) / 0.16),
-        '--table-x': `${(1 - clamp(p / 0.35)) * 70}px`,
-        '--table-angle': `${-3 + p * 3}deg`,
-        '--ticket-one': clamp(p / 0.22),
-        '--ticket-two': clamp((p - 0.2) / 0.22),
-        '--ticket-three': clamp((p - 0.4) / 0.22),
-        '--extra-place': clamp((p - 0.65) / 0.25),
-        '--bottle-drop': `${-35 + opening * 90}px`,
-        '--bag-fold': `${(1 - opening) * 80}deg`,
-        '--bag-open': 0.15 + opening * 0.85,
-        '--tissue-y': `${(1 - clamp((p - 0.4) / 0.25)) * 80}px`,
-        '--tissue-opacity': clamp((p - 0.4) / 0.25),
-        '--ribbon-clip': `${(1 - clamp((p - 0.6) / 0.2)) * 100}%`,
-        '--done': clamp((p - 0.78) / 0.15),
-      };
-      Object.entries(values).forEach(([key, value]) => stage.style.setProperty(key, value));
-      const active = p < 0.32 ? 0 : p < 0.7 ? 1 : 2;
-      scene.querySelectorAll('.scene-beat').forEach((beat, index) => {
-        beat.classList.toggle('is-current', index === active);
-        beat.setAttribute('aria-hidden', String(index !== active));
-      });
-    });
-  }
-  function schedulePaint() {
-    if (!pendingFrame && enhanced()) pendingFrame = requestAnimationFrame(paintScenes);
-  }
-  function motionChanged() {
-    if (enhanced()) schedulePaint();
-    else scenes.forEach(scene => scene.querySelectorAll('.scene-beat').forEach(beat => {
-      beat.removeAttribute('aria-hidden');
-      beat.classList.remove('is-current');
-    }));
-  }
-  window.addEventListener('scroll', schedulePaint, { passive: true });
-  window.addEventListener('resize', schedulePaint);
-  document.addEventListener('storymotionchange', motionChanged);
-  motionChanged();
-
   // Text-only feedback avoids HTML injection and keeps announcements understandable.
   function reply(target, headline, explanation) {
     const first = document.createElement('p');
@@ -124,3 +63,4 @@
   });
   form.addEventListener('change', () => result.replaceChildren());
 })();
+

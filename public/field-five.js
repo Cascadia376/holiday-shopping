@@ -52,7 +52,7 @@
     dialog.querySelector('.bottle-source-link').href = product.descriptionSource;
     dialog.showModal();
     document.documentElement.classList.add('bottle-details-open');
-    if (document.documentElement.classList.contains('motion-story') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && portrait.animate) {
+    if (document.documentElement.classList.contains('scene-motion') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && portrait.animate) {
       portrait.animate([{transform:'translateY(24px) scale(.78)',opacity:0},{transform:'translateY(0) scale(1)',opacity:1}],{duration:350,easing:'cubic-bezier(.2,.8,.2,1)'});
     }
   }
@@ -129,8 +129,9 @@
       panel.querySelector(`[data-shelf-${key}]`).textContent = prompt[index];
     });
     // Native focus stays on the chosen button; feedback is announced in place.
-    if (document.documentElement.classList.contains('motion-story') && panel.animate) {
+    if (document.documentElement.classList.contains('scene-motion') && panel.animate) {
       panel.animate([{ opacity: 0.5, transform: 'translateY(10px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 220, easing: 'ease-out' });
     }
   }));
 })();
+

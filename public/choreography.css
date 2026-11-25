@@ -79,3 +79,4 @@ html:not(.motion-story) .bottle-discovery { animation:none; }
 @media(max-width:768px) {
  .motion-story .story-guest { transform:translate(calc(var(--guest-x,0px) * .25),var(--guest-y,0px)) rotate(var(--guest-angle,0deg)) scale(var(--guest-scale,1)); }
 }
+

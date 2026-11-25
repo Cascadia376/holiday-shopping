@@ -84,3 +84,18 @@
  .original-rescue .rescue-line { font-size:1.55rem; }
  .extended-guide-intro { padding:65px 7%; }
 }
+
+
+.field-detail, .shift-reference {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 20px clamp(18px, 6vw, 84px);
+}
+.field-detail > summary { cursor: pointer; font: 600 1.1rem/1.5 Georgia, serif; }
+.shift-reference h2 { font-size: clamp(32px, 5vw, 56px); }
+.shift-reference nav { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 20px 0; }
+.shift-reference .field-detail { padding-inline: 0; }
+.shift-reference .extended-guide-intro a { color: white; }
+[data-host-routes][hidden] { display: none; }
+.motion-story .scroll-story { height: 220svh; }
+.motion-story .toast-story, .motion-story .gift-story { height: 195svh; }

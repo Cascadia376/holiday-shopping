@@ -18,3 +18,22 @@ if (index) {
         if (!index.contains(event.target)) index.open = false;
     });
 }
+
+
+// Open the field note before following an index link or a bookmarked fragment.
+function revealFieldNote(hash) {
+    const target = document.getElementById(hash.slice(1));
+    let detail = target?.closest('details.field-detail');
+    if (!detail) return;
+    while (detail) {
+        detail.open = true;
+        detail = detail.parentElement.closest('details.field-detail');
+    }
+    target.scrollIntoView();
+}
+document.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (link) revealFieldNote(link.hash);
+});
+window.addEventListener('hashchange', () => revealFieldNote(location.hash));
+revealFieldNote(location.hash);

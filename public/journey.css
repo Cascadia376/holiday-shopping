@@ -147,3 +147,4 @@
  .motion-story .gift-stage-art { transform:scale(.8); transform-origin:bottom center; }
 }
 @media (prefers-reduced-motion:reduce) { .scene-beat { transition:none !important; } }
+

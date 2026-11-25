@@ -31,3 +31,4 @@
   document.addEventListener('storymotionchange', stopMotion);
   reducedMotion.addEventListener('change', stopMotion);
 })();
+

@@ -106,3 +106,4 @@ p { font-size:18px; line-height:1.75; }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *, *::before, *::after { animation:none !important; transition:none !important; } }
 /* Draw the arrow so it does not depend on a platform's symbol font. */
 .start-link span { display:inline-block; width:12px; height:12px; font-size:0; border-right:1px solid currentColor; border-bottom:1px solid currentColor; transform:rotate(0deg); }
+

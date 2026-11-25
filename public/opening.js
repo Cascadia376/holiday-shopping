@@ -1,130 +1,5 @@
 (() => {
   'use strict';
-  const story = document.querySelector('.scroll-story');
-  if (!story) return;
-  const stage = story.querySelector('.story-stage');
-  const beats = [...story.querySelectorAll('.story-beat')];
-  const shopperStory = document.querySelector('.shopper-story');
-  const shopperStage = shopperStory?.querySelector('.shopper-stage');
-  const buyersStory = document.querySelector('.buyers-story');
-  const buyersStage = buyersStory?.querySelector('.buyers-stage');
-  const buyerCards = buyersStage ? [...buyersStage.querySelectorAll('.gift-card')] : [];
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let manualMotionOff = false;
-  const motionOff = () => reducedMotion.matches || manualMotionOff;
-  const motionToggle = document.querySelector('.motion-toggle');
-  let frame = 0;
-  let activeBeat = -1;
-  const clamp = (value, low = 0, high = 1) => Math.min(high, Math.max(low, value));
-
-  // Native scrolling remains in charge; one scheduled frame updates decorative transforms.
-  function paintStory() {
-    frame = 0;
-    if (motionOff()) return;
-    const top = parseFloat(getComputedStyle(stage).top) || 0;
-    const distance = story.offsetHeight - stage.offsetHeight;
-    const progress = clamp((top - story.getBoundingClientRect().top) / Math.max(1, distance));
-    const reveal = clamp((progress - 0.15) / 0.45);
-    // Give the opening line a complete beat before the first story card enters.
-    const taglineOpacity = 1 - clamp((progress - 0.05) / 0.09);
-    const listCross = clamp((progress - 0.72) / 0.28);
-    const values = {
-      '--progress': progress,
-      '--guest-x': `${(1 - clamp(progress / 0.35)) * 180}px`,
-      '--guest-y': `${Math.sin(clamp(progress / 0.35) * Math.PI * 4) * (1 - clamp(progress / 0.35)) * 7}px`,
-      '--guest-scale': 0.93 + clamp(progress / 0.35) * 0.07,
-      '--errand-one': clamp((progress - 0.18) / 0.09),
-      '--errand-two': clamp((progress - 0.24) / 0.09),
-      '--errand-three': clamp((progress - 0.30) / 0.09),
-      '--errand-four': clamp((progress - 0.36) / 0.09),
-      '--errand-five': clamp((progress - 0.46) / 0.1),
-      '--errand-six': clamp((progress - 0.58) / 0.1),
-      '--guest-angle': `${-4 + progress * 6}deg`,
-      '--title-y': `${-progress * 45}px`,
-      '--title-opacity': 1 - progress * 0.82,
-      '--tagline-opacity': taglineOpacity,
-      '--sun-y': `${progress * 90}px`,
-      '--sun-scale': 1 + progress * 0.12,
-      '--list-clip': `${(1 - reveal) * 100}%`,
-      '--list-y': `${-25 + reveal * 25}px`,
-      '--list-angle': `${12 - reveal * 8}deg`,
-      '--list-cross-y': `${listCross * stage.offsetHeight * 0.5}px`,
-    };
-    Object.entries(values).forEach(([key, value]) => stage.style.setProperty(key, value));
-    const nextBeat = progress < 0.18 ? -1 : progress < 0.46 ? 0 : progress < 0.72 ? 1 : 2;
-    if (nextBeat !== activeBeat) {
-      activeBeat = nextBeat;
-      beats.forEach((beat, index) => {
-        beat.classList.toggle('is-current', index === nextBeat);
-        beat.setAttribute('aria-hidden', String(nextBeat < 0 || index !== nextBeat));
-      });
-    }
-    if (shopperStory && shopperStage) {
-      const shopperTop = parseFloat(getComputedStyle(shopperStage).top) || 0;
-      const shopperDistance = shopperStory.offsetHeight - shopperStage.offsetHeight;
-      const shopperRect = shopperStory.getBoundingClientRect();
-      const shopperProgress = clamp((shopperTop - shopperRect.top) / Math.max(1, shopperDistance));
-      const shopperEnter = clamp(shopperProgress / 0.18);
-      // Hold the lesson, then reveal the restrained blue panel in distinct beats.
-      const copyOut = clamp((shopperProgress - 0.72) / 0.08);
-      const lastPanel = clamp((shopperProgress - 0.78) / 0.06);
-      const lastWord = clamp((shopperProgress - 0.82) / 0.06);
-      const lastStat = clamp((shopperProgress - 0.88) / 0.06);
-      const lastTakeaway = clamp((shopperProgress - 0.94) / 0.05);
-      const lastExit = clamp((window.innerHeight - shopperRect.bottom) / (window.innerHeight * 0.2));
-      shopperStage.style.setProperty('--shopper-progress', shopperProgress);
-      shopperStage.style.setProperty('--shopper-enter', shopperEnter);
-      shopperStage.style.setProperty('--shopper-copy-opacity', 1 - copyOut);
-      shopperStage.style.setProperty('--last-panel', lastPanel * (1 - lastExit));
-      shopperStage.style.setProperty('--last-word', lastWord * (1 - lastExit));
-      shopperStage.style.setProperty('--last-stat', lastStat * (1 - lastExit));
-      shopperStage.style.setProperty('--last-takeaway', lastTakeaway * (1 - lastExit));
-    }
-    if (buyersStory && buyersStage && buyerCards.length) {
-      const buyersTop = parseFloat(getComputedStyle(buyersStage).top) || 0;
-      const buyersDistance = buyersStory.offsetHeight - buyersStage.offsetHeight;
-      const buyersProgress = clamp((buyersTop - buyersStory.getBoundingClientRect().top) / Math.max(1, buyersDistance));
-      const scene = (start, end) => {
-        const enter = clamp((buyersProgress - start) / 0.07);
-        const leave = clamp((buyersProgress - (end - 0.07)) / 0.07);
-        return { opacity: enter * (1 - leave), x: (1 - enter) * 90 - leave * 70 };
-      };
-      const ranges = [[0.1, 0.37], [0.33, 0.6], [0.56, 0.83]];
-      buyersStage.style.setProperty('--buyers-intro', 1 - clamp((buyersProgress - 0.07) / 0.08));
-      buyerCards.forEach((card, index) => {
-        const state = scene(...ranges[index]);
-        card.style.setProperty('--buyer-opacity', state.opacity);
-        card.style.setProperty('--buyer-x', `${state.x}px`);
-        card.style.setProperty('--buyer-image-x', `${(1 - state.opacity) * 45}px`);
-      });
-      buyersStage.style.setProperty('--buyers-resolution', clamp((buyersProgress - 0.8) / 0.1));
-    }
-  }
-  function schedulePaint() {
-    if (!frame && !motionOff()) frame = requestAnimationFrame(paintStory);
-  }
-  function configureMotion() {
-    document.documentElement.classList.toggle('motion-story', !motionOff());
-    motionToggle.setAttribute('aria-pressed', String(motionOff()));
-    motionToggle.textContent = motionOff() ? 'Motion is off' : 'Turn motion off';
-    if (manualMotionOff && !reducedMotion.matches) motionToggle.textContent = 'Turn motion on';
-    motionToggle.disabled = reducedMotion.matches;
-    document.dispatchEvent(new Event('storymotionchange'));
-    activeBeat = -1;
-    if (motionOff()) {
-      beats.forEach(beat => { beat.removeAttribute('aria-hidden'); beat.classList.remove('is-current'); });
-    } else schedulePaint();
-  }
-  window.addEventListener('scroll', schedulePaint, { passive: true });
-  window.addEventListener('resize', schedulePaint);
-  reducedMotion.addEventListener('change', configureMotion);
-  motionToggle.addEventListener('click', () => {
-    manualMotionOff = !manualMotionOff;
-    configureMotion();
-    story.scrollIntoView({ behavior: 'instant', block: 'start' });
-  });
-  configureMotion();
-
   const encounters = {
     coworker: {
       feedback: '“A coworker. I don’t know them that well.”',
@@ -160,6 +35,7 @@
   const cards = [...discovery.querySelectorAll('.study-card')];
   function selectRecipient(key, persist = true) {
     const encounter = encounters[key];
+    document.querySelector('[data-host-routes]').hidden = key !== 'host';
     if (!encounter) return;
     choices.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.recipient === key)));
     const reply = document.createElement('p');
@@ -188,3 +64,4 @@
     if (saved) selectRecipient(saved, false);
   } catch { /* Private browsers can disable session storage. */ }
 })();
+
